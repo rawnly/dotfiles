@@ -1,0 +1,82 @@
+{
+  "React hook": {
+    "prefix": "hook",
+    "body": [
+      "type ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/} = {",
+      "\t",
+      "}",
+      "\n",
+      "const ${TM_FILENAME_BASE/(.*)/${1:/lowercase}/} = (): ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/} => {",
+      "\t",
+      "}",
+      "\n",
+      "export default ${TM_FILENAME_BASE/(.*)/${1:/lowercase}/}"
+    ]
+  },
+  "TaskEither Imports": {
+    "prefix": "teimp",
+    "body": [
+      "import * as TE from 'fp-ts/TaskEither'",
+      "import * as E from 'fp-ts/Either'"
+    ]
+  },
+  "Export Default": {
+    "prefix": "exp",
+    "body": "export default ${TM_FILENAME_BASE}"
+  },
+  "Interface": {
+    "prefix": "int",
+    "body": ["interface ${1:Name} {", "\t$0", "}"]
+  },
+  "Type": {
+    "prefix": "type",
+    "body": ["type ${1:Name} = {", "\t$0", "}"]
+  },
+  "Enum": {
+    "prefix": "enum",
+    "body": ["enum ${1:Name} {", "\t$0", "}"]
+  },
+  "Next API Handler": {
+    "prefix": "nextapihandler",
+    "body": [
+      "import { NextApiHandler } from 'next';",
+      "",
+      "const Handler : NextApiHandler = async (req, res) => {",
+      "\t$0",
+      "}",
+      "",
+      "export default Handler"
+    ]
+  },
+  "Next Middleware": {
+    "prefix": "nextmiddleware",
+    "body": [
+      "import { NextMiddleware, NextRequest, NextResponse } from 'next/server'",
+      "",
+      "export const middleware: NextMiddleware = async (req: NextRequest) => {",
+      "\tconst response = NextResponse.next()",
+      "",
+      "\treturn response",
+      "}"
+    ]
+  },
+  "randomString": {
+    "prefix": "rand",
+    "body": [
+      "(\"\"+1e7).replace(/[01]/g, () => (0 | (Math.random()*16)).toString(16))"
+    ],
+    "description": "Generate a random string"
+  },
+  "Jest: Describe": {
+    "prefix": "describe",
+    "body": ["describe('${1:Name}', () => {", "\t$0", "})"]
+  },
+  "Jest: Test Case": {
+    "prefix": "it",
+    "body": ["it('${1:Name}', () => {", "\t$0", "})"]
+  },
+  "Type: Person": {
+    "prefix": "tp",
+    "body": ["type Person = {", "\tname: string;", "\tage: number;", "}"]
+  }
+}

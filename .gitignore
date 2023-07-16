@@ -1,0 +1,4 @@
+*.local.*
+
+.tmux/plugins
+.DS_Store

@@ -1,0 +1,189 @@
+{
+  "HTMLProps": {
+    "prefix": "htprops",
+    "description": "HTML props of given element",
+    "body": "React.DetailedHTMLProps<React.${1/(.*)/${1:/capitalize}/}HTMLAttributes<HTML${1/(.*)/${1:/capitalize}/}Element>, HTML${1/(.*)/${1:/capitalize}/}Element>"
+  },
+  "PolymorphicFunctionComponent": {
+    "prefix": "fncpp",
+    "description": "React Function Component (Polymorphic)",
+    "body": [
+      "import React from \"react\";",
+      "",
+      "interface PolymorphicProps<C extends React.ElementType> {",
+      "\tas?: C",
+      "}",
+      "",
+      "type I${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props<C extends React.ElementType> = PolymorphicProps<C> & Omit<React.ComponentPropsWithRef<C>, keyof PolymorphicProps<C>> & {",
+      "\t/** your props here */",
+      "}",
+      "",
+      "const ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/} = <C extends React.ElementType>({ as, ...props }) => {",
+      "\tconst Component = as || 'div';",
+      "",
+      "\t// Do your stuff here,",
+      "",
+      "\treturn (",
+      "\t\t<Component {...props}>",
+      "\t\t\t{props.children}",
+      "\t\t</Component>",
+      "\t);",
+      "}",
+      "",
+      "${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}.displayName = '${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}'",
+      "",
+      "export default ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/};"
+    ]
+  },
+  "FunctionComponent": {
+    "prefix": "fncp",
+    "description": "React Function Component",
+    "body": [
+      "import React, { FC, PropsWithChildren } from \"react\";",
+      "",
+      "interface I${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props { }",
+      "",
+      "const ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}: FC<PropsWithChildren<I${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props>> = (props) => {",
+      "\t// Do your stuff here,",
+      "",
+      "\treturn ${0:null};",
+      "}",
+      "",
+      "${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}.displayName = '${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}'",
+      "",
+      "export default ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/};"
+    ]
+  },
+  "FunctionComponent Ref": {
+    "prefix": "fncpr",
+    "description": "React Function Component with Ref",
+    "body": [
+      "import React, { forwardRef } from \"react\";",
+      "",
+      "interface I${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props extends React.${2/(.*)/${1:/capitalize}/}HTMLAttributes<HTML${2/(.*)/${1:/capitalize}/}Element> { }",
+      "",
+      "const ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}: React.FC<I${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props & React.RefAttributes<HTML${2/(.*)/${1:/capitalize}/}Element>> = forwardRef((props, ref) => {",
+      "\t// Do your stuff here,",
+      "",
+      "\treturn ${0:null};",
+      "})",
+      "",
+      "${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}.displayName = '${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}'",
+      "",
+      "export default ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/};"
+    ]
+  },
+  "SVG Component Ref": {
+    "prefix": "svgcp",
+    "description": "SVG Function Component with Ref",
+    "body": [
+      "import React, { forwardRef } from \"react\";",
+      "",
+      "interface I${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props extends React.SVGProps<SVGSVGElement> { }",
+      "",
+      "const ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/} = forwardRef<SVGSVGElement, I${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props>((props, ref) => (",
+      "\t$0",
+      "));",
+      "",
+      "${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}.displayName = '${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}'",
+      "",
+      "export default ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/};"
+    ]
+  },
+  "React: useState": {
+    "prefix": "useState",
+    "description": "React `useState` snippet",
+    "body": "const [${1/(.*)/${1:/downcase}/}, set${1/(.*)/${1:/capitalize}/}] = useState(${0:null})"
+  },
+  "React: useEffect": {
+    "prefix": "useEffect",
+    "description": "React `useEffect` snippet",
+    "body": ["useEffect(() => {", "\t$1", "}, [$0])"]
+  },
+  "React: useCallback": {
+    "prefix": "useCallback",
+    "description": "React `useCallback` snippet",
+    "body": [
+      "const ${1/(^[A-z]{1})/${1:/downcase}/} = useCallback(() => {",
+      "\t$0",
+      "}, [])"
+    ]
+  },
+  "capitalize": {
+    "body": "${1/([A-z]\\s?){1,}/[a-z]/g}"
+  },
+  "Next.js Document": {
+    "prefix": "_document",
+    "description": "Next.js Document",
+    "body": [
+      "import { FC } from 'react'",
+      "import { type DocumentProps, Html, Main, Head, NextScript } from 'next/document'",
+      "",
+      "const Document: FC<DocumentProps> = () => (",
+      "\t<Html>",
+      "\t\t<Head />",
+      "\t\t<body>",
+      "\t\t\t<Main />",
+      "\t\t\t<NextScript />",
+      "\t\t</body>",
+      "\t</Html>",
+      ")",
+      "",
+      "export default Document"
+    ]
+  },
+  "Next.js App": {
+    "prefix": "_app",
+    "description": "NextJS _app",
+    "body": [
+      "import { AppProps } from 'next/app'",
+      "import { FC } from 'react'",
+      "",
+      "const App: FC<AppProps> = ({ Component, pageProps }) => (",
+      "\t<Component {...pageProps} />",
+      ");",
+      "",
+      "export default App"
+    ]
+  },
+  "NextJS Page": {
+    "prefix": "nextpage",
+    "description": "NextJS Typescript Page",
+    "body": [
+      "import React from 'react';",
+      "import { NextPage } from 'next';",
+      "",
+      "interface PageProps {}",
+      "",
+      "const Page: NextPage<PageProps> = props => {",
+      "\treturn ${1:null}",
+      "};",
+      "",
+      "Page.displayName = '${TM_FILENAME_BASE/(.*)/${1:/capitalize}/gi}Page';",
+      "",
+      "export default Page;"
+    ]
+  },
+  "classnames": {
+    "prefix": "icx",
+    "description": "Import cx from clsx",
+    "body": "import cx from 'clsx'"
+  },
+  "JSON": {
+    "prefix": "json",
+    "description": "Log json object well formatted",
+    "body": "<pre>{JSON.stringify($0, null, 2)}</pre>"
+  },
+  "Interface": {
+    "prefix": "int",
+    "body": ["interface ${1:Name} {", "\t$0", "}"]
+  },
+  "Type": {
+    "prefix": "type",
+    "body": ["type ${1:Name} = {", "\t$0", "}"]
+  },
+  "Enum": {
+    "prefix": "enum",
+    "body": ["enum ${1:Name} {", "\t$0", "}"]
+  }
+}

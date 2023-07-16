@@ -1,0 +1,28 @@
+[user]
+	name = rawnly
+	signinkey = 6D0A0BACA69B47DB
+	email = rawnly@users.noreply.github.com
+[color]
+	ui = auto
+[init]
+	defaultBranch = main
+[diff]
+	tool = difftastic
+	external = difft
+[difftool]
+	prompt = false
+[difftoo "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+	difftool = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[commit]
+	gpgsign = true
+[merge]
+	ff = only
+[pull]
+	ff = only

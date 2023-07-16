@@ -1,0 +1,52 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+add_newline = false
+format = ' $all'
+
+[cmd_duration]
+min_time = 5_000
+format = "took [$duration]($style)"
+
+[directory]
+truncation_length = 3
+
+[localip]
+disabled = false
+ssh_only = true
+format = "@[$localipv4]($style) "
+
+[aws]
+disabled = true
+
+[aws.region_aliases]
+eu-central-1 = 'Frankfurt'
+eu-west-1 = 'Ireland'
+eu-west-2 = 'London'
+eu-south-1 = 'Milan'
+
+[battery]
+discharging_symbol = '  '
+
+[[battery.display]]
+discharging_symbol = ' 💀 '
+threshold = 25
+
+[[battery.display]]
+threshold = 80
+charging_symbol = ' ⚡️'
+style = 'bold green'
+
+[time]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[python]
+disabled = true
+
+[package]
+disabled = true
+
+[rust]
+disabled = false

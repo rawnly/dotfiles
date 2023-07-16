@@ -1,0 +1,14 @@
+new_tab "dev server"
+cd ~/Developer/Aquacloud/smartfish-front
+layout tall
+launch pnpm dev 
+
+new_tab editor
+cd ~/Developer/Aquacloud/smartfish-front
+launch nvim
+
+new_tab git 
+cd ~/Developer/Aquacloud/smartfish-front
+launch lazygit
+
+

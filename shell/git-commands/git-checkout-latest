@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+latest_commit=$(git log --oneline --all | head -n 1 | awk '{print $1}')
+
+git checkout $latest_commit
