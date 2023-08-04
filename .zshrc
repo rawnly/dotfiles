@@ -142,3 +142,6 @@ export TMUX_MINIMAL=1
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+
+# add ~/shell/bin to the path
+export PATH="$HOME/shell/bin:$PATH"
