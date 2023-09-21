@@ -9,7 +9,7 @@ local config = {
 	default_prog = { "/opt/homebrew/bin/tmux", "new-session", "-A", "-s", "wez-main" },
 	font_size = 16,
 	color_scheme_dirs = { "$HOME/.config/wezterm/colors" },
-	color_scheme = "Gruvbox Material (Gogh)",
+	color_scheme = "federico",
 	font = wezterm.font_with_fallback({
 		"JetBrains Mono",
 		{
@@ -21,26 +21,6 @@ local config = {
 	window_decorations = "RESIZE",
 	enable_wayland = false,
 	exit_behavior = "Close",
-	-- background = {
-	-- 	{
-	-- 		source = {
-	-- 			Gradient = {
-	-- 				orientation = "Horizontal",
-	-- 				colors = {
-	-- 					"#00000C",
-	-- 					"#000026",
-	-- 					"#00000C",
-	-- 				},
-	-- 				interpolation = "CatmullRom",
-	-- 				blend = "Rgb",
-	-- 				noise = 0,
-	-- 			},
-	-- 		},
-	-- 		width = "100%",
-	-- 		height = "100%",
-	-- 		opacity = 0.95,
-	-- 	},
-	-- },
 	window_frame = {
 		font = wezterm.font({
 			family = "Jetbrains Mono Nerd Font",
@@ -52,6 +32,7 @@ local config = {
 		mods = "CTRL|SHIFT",
 		timeout_milliseconds = 2000,
 	},
+	-- \x01 is the prefix (Ctrl+a)
 	keys = {
 		{
 			key = "Enter",
@@ -83,9 +64,10 @@ local config = {
 		{ key = "7", mods = "CMD", action = act({ SendString = "\x017" }) },
 		{ key = "8", mods = "CMD", action = act({ SendString = "\x018" }) },
 		{ key = "9", mods = "CMD", action = act({ SendString = "\x019" }) },
+		{ key = "j", mods = "CMD", action = act({ SendString = "\x01\x54" }) },
+		{ key = "o", mods = "CMD", action = act({ SendString = "\x01\x0F" }) },
+		{ key = "p", mods = "CMD", action = act({ SendString = "\x01\x10" }) },
 	},
 }
-
-config.color_scheme = "Gruvbox Material (Gogh)"
 
 return config
