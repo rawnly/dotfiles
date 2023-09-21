@@ -142,6 +142,9 @@ export TMUX_MINIMAL=1
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
+
+~/shell/homebrew-update-reminder.sh
 
 # add ~/shell/bin to the path
 export PATH="$HOME/shell/bin:$PATH"
