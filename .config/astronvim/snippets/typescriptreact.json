@@ -4,6 +4,43 @@
     "description": "HTML props of given element",
     "body": "React.DetailedHTMLProps<React.${1/(.*)/${1:/capitalize}/}HTMLAttributes<HTML${1/(.*)/${1:/capitalize}/}Element>, HTML${1/(.*)/${1:/capitalize}/}Element>"
   },
+  "NextJS Layout": {
+    "prefix": "nextlayout",
+    "description": "Next.js Page",
+    "body": [
+      "type SearchParams = {};",
+      "",
+      "type Params = {};",
+      "",
+      "interface Props {",
+      "  searchParams: SearchParams;",
+      "  params: Params;",
+      "  children: React.ReactNode;",
+      "}",
+      "",
+      "export default function Page(props: Props) {",
+      "  return null;",
+      "}"
+    ]
+  },
+  "Next Page": {
+    "prefix": "nextpage",
+    "description": "Next.js Page",
+    "body": [
+      "type SearchParams = {};",
+      "",
+      "type Params = {};",
+      "",
+      "interface Props {",
+      "  searchParams: SearchParams;",
+      "  params: Params;",
+      "}",
+      "",
+      "export default function Page(props: Props) {",
+      "  return null;",
+      "}"
+    ]
+  },
   "PolymorphicFunctionComponent": {
     "prefix": "fncpp",
     "description": "React Function Component (Polymorphic)",
@@ -35,44 +72,6 @@
       "export default ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/};"
     ]
   },
-  "FunctionComponent": {
-    "prefix": "fncp",
-    "description": "React Function Component",
-    "body": [
-      "import React, { FC, PropsWithChildren } from \"react\";",
-      "",
-      "interface I${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props { }",
-      "",
-      "const ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}: FC<PropsWithChildren<I${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props>> = (props) => {",
-      "\t// Do your stuff here,",
-      "",
-      "\treturn ${0:null};",
-      "}",
-      "",
-      "${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}.displayName = '${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}'",
-      "",
-      "export default ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/};"
-    ]
-  },
-  "FunctionComponent Ref": {
-    "prefix": "fncpr",
-    "description": "React Function Component with Ref",
-    "body": [
-      "import React, { forwardRef } from \"react\";",
-      "",
-      "interface I${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props extends React.${2/(.*)/${1:/capitalize}/}HTMLAttributes<HTML${2/(.*)/${1:/capitalize}/}Element> { }",
-      "",
-      "const ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}: React.FC<I${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props & React.RefAttributes<HTML${2/(.*)/${1:/capitalize}/}Element>> = forwardRef((props, ref) => {",
-      "\t// Do your stuff here,",
-      "",
-      "\treturn ${0:null};",
-      "})",
-      "",
-      "${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}.displayName = '${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}'",
-      "",
-      "export default ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/};"
-    ]
-  },
   "SVG Component Ref": {
     "prefix": "svgcp",
     "description": "SVG Function Component with Ref",
@@ -90,15 +89,14 @@
       "export default ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/};"
     ]
   },
-  "React: useState": {
-    "prefix": "useState",
-    "description": "React `useState` snippet",
-    "body": "const [${1/(.*)/${1:/downcase}/}, set${1/(.*)/${1:/capitalize}/}] = useState(${0:null})"
-  },
   "React: useEffect": {
     "prefix": "useEffect",
     "description": "React `useEffect` snippet",
-    "body": ["useEffect(() => {", "\t$1", "}, [$0])"]
+    "body": [
+      "useEffect(() => {",
+      "\t$1",
+      "}, [$0])"
+    ]
   },
   "React: useCallback": {
     "prefix": "useCallback",
@@ -146,29 +144,6 @@
       "export default App"
     ]
   },
-  "NextJS Page": {
-    "prefix": "nextpage",
-    "description": "NextJS Typescript Page",
-    "body": [
-      "import React from 'react';",
-      "import { NextPage } from 'next';",
-      "",
-      "interface PageProps {}",
-      "",
-      "const Page: NextPage<PageProps> = props => {",
-      "\treturn ${1:null}",
-      "};",
-      "",
-      "Page.displayName = '${TM_FILENAME_BASE/(.*)/${1:/capitalize}/gi}Page';",
-      "",
-      "export default Page;"
-    ]
-  },
-  "classnames": {
-    "prefix": "icx",
-    "description": "Import cx from clsx",
-    "body": "import cx from 'clsx'"
-  },
   "JSON": {
     "prefix": "json",
     "description": "Log json object well formatted",
@@ -176,14 +151,26 @@
   },
   "Interface": {
     "prefix": "int",
-    "body": ["interface ${1:Name} {", "\t$0", "}"]
+    "body": [
+      "interface ${1:Name} {",
+      "\t$0",
+      "}"
+    ]
   },
   "Type": {
     "prefix": "type",
-    "body": ["type ${1:Name} = {", "\t$0", "}"]
+    "body": [
+      "type ${1:Name} = {",
+      "\t$0",
+      "}"
+    ]
   },
   "Enum": {
     "prefix": "enum",
-    "body": ["enum ${1:Name} {", "\t$0", "}"]
+    "body": [
+      "enum ${1:Name} {",
+      "\t$0",
+      "}"
+    ]
   }
 }
