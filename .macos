@@ -8,7 +8,11 @@ osascript -e 'tell application "System Preferences" to quit'
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+	sudo -n true
+	sleep 60
+	kill -0 "$$" || exit
+done 2>/dev/null &
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
@@ -24,6 +28,11 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 # Stop iTunes from responding to the keyboard media keys
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
+# Disable autocorrection
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+
+# Disable auto-capitalization
+defaults write -g NSAutomaticCapitalizationEnabled -bool false
 
 # Keep folders on top when sorting by name
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
@@ -50,7 +59,5 @@ defaults write com.apple.dock 'autohide-time-modifier' -float '0.5'
 # Put the Dock on the left of the screen
 defaults write com.apple.dock "orientation" -string "left" && killall Dock
 
-
 # Default file save location to local disk
-defaults write NSGlobalDomain "NSDocumentSaveNewDocumentsToCloud" -bool "false" 
-
+defaults write NSGlobalDomain "NSDocumentSaveNewDocumentsToCloud" -bool "false"
