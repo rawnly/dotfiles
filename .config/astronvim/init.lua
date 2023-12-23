@@ -1,4 +1,6 @@
 return {
+  colorscheme = "kanagawa-dragon",
+
   -- Configure AstroNvim updates
   updater = {
     remote = "origin", -- remote to use
@@ -16,11 +18,6 @@ return {
       --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
     },
   },
-  -- Set colorscheme to use
-  colorscheme = "gruvbox-material",
-  -- colorscheme = "kanagawa",
-  -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
-  -- Configure require("lazy").setup() options
   lazy = {
     defaults = { lazy = true },
     performance = {
@@ -30,21 +27,4 @@ return {
       },
     },
   },
-  -- This function is run last and is a good place to configuring
-  -- augroups/autocommands and custom filetypes also this just pure lua so
-  -- anything that doesn't fit in the normal config locations above can go here
-  polish = function()
-    -- Set up custom filetypes
-    -- vim.filetype.add {
-    --   extension = {
-    --     foo = "fooscript",
-    --   },
-    --   filename = {
-    --     ["Foofile"] = "fooscript",
-    --   },
-    --   pattern = {
-    --     ["~/%.config/foo/.*"] = "fooscript",
-    --   },
-    -- }
-  end,
 }

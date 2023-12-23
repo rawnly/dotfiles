@@ -68,3 +68,7 @@ alias gca="github-actions-autodocs"
 
 alias tf="terraform"
 alias vg="vagrant"
+
+dalle() {
+	openai api image.create -p "$1" --response-format url -n 1 | jq .data[0].url | xargs open
+}

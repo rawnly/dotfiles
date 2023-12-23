@@ -115,6 +115,9 @@ export PATH="$PNPM_HOME:$PATH"
 # bun completions
 [ -s "/Users/federicovitale/.bun/_bun" ] && source "/Users/federicovitale/.bun/_bun"
 
+# splash cli completions
+eval "$(splash completion zsh)"
+
 # Bun
 export BUN_INSTALL="/Users/federicovitale/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
@@ -148,3 +151,5 @@ eval "$(atuin init zsh --disable-up-arrow)"
 
 # add ~/shell/bin to the path
 export PATH="$HOME/shell/bin:$PATH"
+
+

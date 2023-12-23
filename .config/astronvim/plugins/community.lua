@@ -15,10 +15,13 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.yaml" },
+  { import = "astrocommunity.pack.helm" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.pack.svelte" },
   { import = "astrocommunity.pack.toml" },
+  { import = "astrocommunity.pack.proto" },
+  { import = "astrocommunity.pack.zig" },
 
   -- motion
   -- { import = "astrocommunity.motion.leap-nvim" },
