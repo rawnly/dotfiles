@@ -94,20 +94,10 @@ cask 'goland'
 cask 'battery-buddy'
 
 
-mas 1483874460 # Sketch
 mas 1502839586 # Hand Mirror
 mas 1504940162 # RocketSim
 mas 775737590 # iA
-mas 461369673 # VOX
 mas 441258766 # Magnet
-mas 1460836908 # GoPro
 mas 1470584107 # Dato
-mas 1482454543 # Twitter
 mas 1294126402 # HEIC
-mas 1569813296 # 1Password
-mas 1147396723 # WhatsApp
-mas 1601814648 # Volum
-mas 1176895641 # Spark
-mas 899247664 # TestFlight
-# mas 497799835 # Xcode
 
