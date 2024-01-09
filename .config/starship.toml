@@ -3,6 +3,12 @@
 add_newline = false
 format = ' $all'
 
+[custom.github_pr_number]
+require_repo = true
+command = 'gh pr --json number --jq .currentBranch.number'
+format = '[$output]($style)'
+
+
 [cmd_duration]
 min_time = 5_000
 format = "took [$duration]($style)"
@@ -16,16 +22,13 @@ ssh_only = true
 format = "@[$localipv4]($style) "
 
 [aws]
-disabled = true
+disabled = false
 
 [aws.region_aliases]
 eu-central-1 = 'Frankfurt'
 eu-west-1 = 'Ireland'
 eu-west-2 = 'London'
 eu-south-1 = 'Milan'
-
-[battery]
-discharging_symbol = '  '
 
 [[battery.display]]
 discharging_symbol = ' 💀 '

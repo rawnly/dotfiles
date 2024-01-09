@@ -1,10 +1,7 @@
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+PROMPT_EOL_MARK=''
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -13,9 +10,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="spaceship"
-source ~/.zplug/init.zsh
-# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -30,17 +24,16 @@ source ~/.zplug/init.zsh
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -52,6 +45,9 @@ source ~/.zplug/init.zsh
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -80,52 +76,89 @@ plugins=(
   dotenv
   macos
   genpass
-  zsh-autosuggestions
-  zsh-syntax-highlighting
+  zsh-ask
 )
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/shell/.aliases.sh
-source ~/shell/.extra.sh
-source ~/shell/.environment.sh
-source ~/shell/.environment.local.sh # secrets
-source ~/shell/plugins.sh
-
-
-
-if type brew &>/dev/null; then
+if type brew &>/dev/null; then 
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
   autoload -Uz compinit
   compinit
 fi
 
-export GOPATH=$HOME/.go
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="$HOME/Library/Python/3.8/bin:$PATH"
+# User configuration
 
+# export MANPATH="/usr/local/man:$MANPATH"
 
-# pnpm
-export PNPM_HOME="/Users/federicovitale/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export LOCAL_SCRIPTS="$HOME/shell/bin"
+export GOPATH="$HOME/.go"
+export PATH="$HOME/shell/bin:/opt/homebrew/bin:/$BUN_INSTALL/bin:$HOME/.cargo/bin:$PATH"
+
+export ZPLUG_HOME=$(brew --prefix)/opt/zplug
+
+if [ -f ${ZPLUG_HOME}/init.zsh ]; then
+    source ${ZPLUG_HOME}/init.zsh
+fi
+
+source ~/shell/.aliases.sh
+source ~/shell/.extra.sh
+source ~/shell/.environment.sh
+source ~/shell/.environment.local.sh
+
+source "$HOME/.cargo/env"
 
 # bun completions
 [ -s "/Users/federicovitale/.bun/_bun" ] && source "/Users/federicovitale/.bun/_bun"
 
-# splash cli completions
-eval "$(splash completion zsh)"
 
-# Bun
-export BUN_INSTALL="/Users/federicovitale/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# ZPLUG
+
+zplug "zsh-users/zsh-completions",              defer:0
+zplug "zsh-users/zsh-autosuggestions",          defer:2, on:"zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting",      defer:3, on:"zsh-users/zsh-autosuggestions"
+
+# Enhanced list dirs with git
+zplug "supercrabtree/k"
+zplug "jocelynmallon/zshmarks"
+zplug "djui/alias-tips"
+
+# zplug "plugins/git" from:oh-my-zsh
+
+# /ZPLUG
+
+if ! zplug check --verbose; then 
+  printf "Install? [y/N]: "
+
+  if read -q; then 
+    echo; zplug install
+  fi
+fi
 
 zplug load
-source /Users/federicovitale/.config/op/plugins.sh
-
-# CUSTOM KEYBINDINGS CONFIGS
 
 # Disable arrow right key for autosuggestions
 ZSH_AUTOSUGGEST_ACCEPT_WIDGETS[$ZSH_AUTOSUGGEST_ACCEPT_WIDGETS[(i)forward-char]]=()
@@ -133,23 +166,21 @@ ZSH_AUTOSUGGEST_ACCEPT_WIDGETS[$ZSH_AUTOSUGGEST_ACCEPT_WIDGETS[(i)forward-char]]
 bindkey -v
 bindkey '^ ' autosuggest-accept
 
-# export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-#For compilers to find ruby you may need to set:
-export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
-
-#For pkg-config to find ruby you may need to set:
-export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby/lib/pkgconfig"
-
-export TMUX_MINIMAL=1
-
-eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
+eval "$(thefuck --alias)"
 
-~/shell/homebrew-update-reminder.sh
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export D="$HOME/Developer"
 
-# add ~/shell/bin to the path
-export PATH="$HOME/shell/bin:$PATH"
 
-
+# pnpm
+export PNPM_HOME="/Users/federicovitale/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

@@ -1,0 +1,100 @@
+{
+  "HTMLProps": {
+    "prefix": "htprops",
+    "description": "HTML props of given element",
+    "body": "React.DetailedHTMLProps<React.${1/(.*)/${1:/capitalize}/}HTMLAttributes<HTML${1/(.*)/${1:/capitalize}/}Element>, HTML${1/(.*)/${1:/capitalize}/}Element>"
+  },
+  "NextJS Layout": {
+    "prefix": "nextlayout",
+    "description": "Next.js Page",
+    "body": [
+      "type SearchParams = {};",
+      "",
+      "type Params = {};",
+      "",
+      "interface Props {",
+      "  searchParams: SearchParams;",
+      "  params: Params;",
+      "  children: React.ReactNode;",
+      "}",
+      "",
+      "export default function Layout(props: Props) {",
+      "  return null;",
+      "}"
+    ]
+  },
+  "Next Page": {
+    "prefix": "nextpage",
+    "description": "Next.js Page",
+    "body": [
+      "type SearchParams = {};",
+      "",
+      "type Params = {};",
+      "",
+      "interface Props {",
+      "  searchParams: SearchParams;",
+      "  params: Params;",
+      "}",
+      "",
+      "export default function Page(props: Props) {",
+      "  return null;",
+      "}"
+    ]
+  },
+  "PolymorphicFunctionComponent": {
+    "prefix": "fncpp",
+    "description": "React Function Component (Polymorphic)",
+    "body": [
+      "import React from \"react\";",
+      "",
+      "interface PolymorphicProps<C extends React.ElementType> {",
+      "\tas?: C",
+      "}",
+      "",
+      "type I${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props<C extends React.ElementType> = PolymorphicProps<C> & Omit<React.ComponentPropsWithRef<C>, keyof PolymorphicProps<C>> & {",
+      "\t/** your props here */",
+      "}",
+      "",
+      "const ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/} = <C extends React.ElementType>({ as, ...props }) => {",
+      "\tconst Component = as || 'div';",
+      "",
+      "\t// Do your stuff here,",
+      "",
+      "\treturn (",
+      "\t\t<Component {...props}>",
+      "\t\t\t{props.children}",
+      "\t\t</Component>",
+      "\t);",
+      "}",
+      "",
+      "${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}.displayName = '${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}'",
+      "",
+      "export default ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/};"
+    ]
+  },
+  "SVG Component Ref": {
+    "prefix": "svgcp",
+    "description": "SVG Function Component with Ref",
+    "body": [
+      "import React, { forwardRef } from \"react\";",
+      "",
+      "interface I${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props extends React.SVGProps<SVGSVGElement> { }",
+      "",
+      "const ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/} = forwardRef<SVGSVGElement, I${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props>((props, ref) => (",
+      "\t$0",
+      "));",
+      "",
+      "${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}.displayName = '${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}'",
+      "",
+      "export default ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/};"
+    ]
+  },
+  "capitalize": {
+    "body": "${1/([A-z]\\s?){1,}/[a-z]/g}"
+  },
+  "JSON": {
+    "prefix": "json",
+    "description": "Log json object well formatted",
+    "body": "<pre>{JSON.stringify($0, null, 2)}</pre>"
+  }
+}
