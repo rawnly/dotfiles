@@ -185,6 +185,3 @@ esac
 # pnpm end
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-
-source /Users/federico.vitale/.config/broot/launcher/bash/br
-
