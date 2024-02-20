@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+	echo "No port specified"
+	return 0
+fi
+
+pid="$(lsof -i "tcp:$1" | awk '{print $2}' | grep -E '\d')"
+
+echo "$pid"

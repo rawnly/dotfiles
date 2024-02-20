@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+	branch="$(git branch | fzf --query '!^* ' | sed 's,\*|\+ ,,g' | xargs)"
+
+	if [ -z "$branch" ]; then
+		exit 1
+	fi
+
+	git checkout "$branch"
+else
+	git checkout "$1"
+fi

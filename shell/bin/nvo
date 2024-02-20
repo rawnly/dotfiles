@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+fd "$1" | fzf --bind "enter:become($EDITOR {})"

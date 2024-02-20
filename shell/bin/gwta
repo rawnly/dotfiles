@@ -1,0 +1,5 @@
+#!/bin/sh
+
+path="$1"
+
+git branch | fzf --query '!^* !^+ ' --prompt 'Select a branch: ' --bind "enter:become(git worktree add '$1' '{}')"

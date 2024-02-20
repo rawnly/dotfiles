@@ -76,3 +76,4 @@ dalle() {
 unalias gwta
 unalias gco
 alias t="tmux"
+alias sl="ls"

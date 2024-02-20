@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+	echo "Usage: fp <package_name> [-d]"
+	exit 1
+fi
+
+SCOPE=".dependencies"
+
+if [[ "$2" == "-D" || "$2" == "-d" ]]; then
+	SCOPE=".devDependencies"
+fi
+
+packages=$(jq $SCOPE <package.json | grep "$1" | sed s/\"//g | awk -F: '{printf $1 $2}' | xargs)
+
+echo "$packages"
