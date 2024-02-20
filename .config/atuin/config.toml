@@ -36,10 +36,10 @@
 
 ## which filter mode to use
 ## possible values: global, host, session, directory
-# filter_mode = "global"
+filter_mode = "host"
 
 ## With workspace filtering enabled, Atuin will filter for commands executed
-## in any directory within a git repository tree (default: false)
+## in any directory within a git repositiry tree (default: false)
 # workspaces = false
 
 ## which filter mode to use when atuin is invoked from a shell up-key binding
@@ -54,7 +54,7 @@
 
 ## which style to use
 ## possible values: auto, full, compact
-# style = "auto"
+style = "compact"
 
 ## the maximum number of lines the interface should take up
 ## set it to 0 to always go full screen
@@ -65,7 +65,7 @@
 
 ## enable or disable showing a preview of the selected command
 ## useful when the command is longer than the terminal width and is cut off
-# show_preview = false
+show_preview = false
 
 ## what to do when the escape key is pressed when searching
 ## possible values: return-original, return-query
@@ -124,18 +124,3 @@
 ## Defaults to true. If enabled, upon hitting enter Atuin will immediately execute the command. Press tab to return to the shell and edit.
 # This applies for new installs. Old installs will keep the old behaviour unless configured otherwise.
 enter_accept = true
-
-#[stats]
-# Set commands where we should consider the subcommand for statistics. Eg, kubectl get vs just kubectl
-#common_subcommands = [
-#  "cargo",
-#  "go",
-#  "git",
-#  "npm",
-#  "yarn",
-#  "pnpm",
-#  "kubectl",
-#]
-# 
-# Set commands that should be totally stripped and ignored from stats
-#common_prefix = ["sudo"]

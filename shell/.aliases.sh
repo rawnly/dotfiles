@@ -68,12 +68,12 @@ alias gca="github-actions-autodocs"
 
 alias tf="terraform"
 alias vg="vagrant"
-
-dalle() {
-	openai api image.create -p "$1" --response-format url -n 1 | jq .data[0].url | xargs open
-}
-
-unalias gwta
-unalias gco
-alias t="tmux"
-alias sl="ls"
+alias pnpm="corepack pnpm"
+alias pnpx="corepack pnpx"
+alias yarn="corepack yarn"
+alias npm="corepack npm"
+alias npx="corepack npx"
+alias python="python3"
+alias reload="omz reload"
+alias gtn='git tag $(svu next)'
+alias copyBranch='git branch | grep "*" | "sed s,* ,,g" | pbcopy'

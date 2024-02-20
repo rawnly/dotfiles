@@ -76,6 +76,7 @@ plugins=(
   dotenv
   macos
   genpass
+  zsh-ask
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -126,9 +127,9 @@ fi
 source ~/shell/.aliases.sh
 source ~/shell/.extra.sh
 source ~/shell/.environment.sh
-source ~/shell/.satispay.sh
-# source ~/shell/.environment.local.sh
+source ~/shell/.environment.local.sh
 
+source "$HOME/.cargo/env"
 
 # bun completions
 [ -s "/Users/federicovitale/.bun/_bun" ] && source "/Users/federicovitale/.bun/_bun"
@@ -183,8 +184,3 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
-source /Users/federico.vitale/.config/broot/launcher/bash/br
-

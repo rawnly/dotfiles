@@ -1,18 +1,5 @@
 #! /bin/bash
-function nvo() {
-	fd "$1" | fzf --bind 'enter:become(nvim {})'
-}
-
-function toggle-tmux-popup() {
-	session_name="scratchpad"
-
-	if [ "$(tmux display-message -p -F "#{session_name}")" = "$session_name" ]; then
-		tmux detach-client
-	else
-		tmux display-popup -d '#{pane_current_path}' -xC -yC -w80% -h75% -E "tmux new-session -A -s $session_name"
-	fi
-}
-
+#
 function scratchpad() {
 	file_name="$(date +%s)_${1}"
 
@@ -60,10 +47,6 @@ function better_cat() {
 
 function identity() {
 	case "$@" in
-	"aquacloud" | "aqua")
-		git config user.name federico.vitale
-		git config user.email federico.vitale@aquacloud.it
-		;;
 	*)
 		git config user.name rawnly
 		git config user.email rawnly@users.noreply.github.com
@@ -201,4 +184,44 @@ function findPackages() {
 	packages=$(cat "package.json" | jq $SCOPE | grep "$1" | sed s/\"//g | awk -F: '{printf $1}' | xargs)
 
 	echo "$packages"
+}
+
+function cleanup() {
+	C_CONFIRM=
+	C_SCOPE="node_modules"
+
+	case "$@" in
+	node)
+		C_SCOPE="node_modules"
+		;;
+	rust)
+		C_SCOPE="target"
+		;;
+	esac
+
+	results=$(fd --no-ignore --type d -H "$C_SCOPE" | rg -v "$C_SCOPE/.*/$C_SCOPE" | sort -u)
+
+	if [ -z "$results" ]; then
+		echo "No $C_SCOPE found."
+		return 0
+	fi
+
+	echo "Found $C_SCOPE:"
+	echo "============="
+	echo "$results"
+	echo "============="
+
+	vared -p "Do you want to delete them? [y/N] " -c C_CONFIRM
+
+	if [[ "$C_CONFIRM" == "y" ]]; then
+		echo "Deleting $C_SCOPE..."
+		echo "$results" | xargs rm -rf
+	else
+		echo "Aborting..."
+		return 0
+	fi
+}
+
+function gcof() {
+	git checkout "$(git branch --format='%(refname:short)' | fzf)"
 }
