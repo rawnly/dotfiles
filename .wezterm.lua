@@ -27,8 +27,7 @@ config.font = wezterm.font_with_fallback({
 
 -- color scheme
 config.color_scheme_dirs = { "~/.config/wezterm/colors" }
-config.color_scheme = "Everblush (Gogh)"
--- config.color_scheme = "Gruvbox dark, hard (base16)"
+config.color_scheme = "Gruvbox dark, hard (base16)"
 
 -- window style
 config.window_background_opacity = 1
