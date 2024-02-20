@@ -1,0 +1,36 @@
+let mapleader=" "
+
+Plug 'preservim/nerdtree'
+
+set hlsearch
+set ignorecase
+set smartcase
+set incsearch
+set wrapscan
+
+set multiple-cursors
+set surround
+set commentary
+set ideajoin
+set ideastatusicon=disabled
+
+nnoremap <CR> ciw
+nnoremap <leader>ld :action Debug<CR>
+nnoremap <leader>lr :action RenameElement<CR>
+nnoremap <C-s> :w<CR>
+nnoremap <leader>e :NERDTreeToggle<CR>
+nnoremap <leader>c :q<CR>
+nnoremap <leader>ff :action GotoFile<CR>
+nnoremap <leader>fw :action FindInPath<CR>
+nnoremap <leader>fc :action FindWordAtCaret<CR>
+nnoremap gr :action FindUsages<CR>
+
+inoremap <c-k> <up>
+inoremap <c-j> <down>
+
+map Y y$
+vnoremap p pgvy
+
+vnoremap < <gv
+vnoremap > >gv
+vnoremap = =gv
