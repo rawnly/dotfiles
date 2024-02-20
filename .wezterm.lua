@@ -9,6 +9,7 @@ config.check_for_updates_interval_seconds = 3600 * 6 -- 6hrs
 
 -- handled by tmux
 config.enable_tab_bar = false
+config.set_environment_variables = {}
 
 -- set tmux as default program.
 -- new windows will have a new tmux session initialized
@@ -17,8 +18,7 @@ config.default_prog = { "/opt/homebrew/bin/tmux", "new-session", "-A", "-s", "ma
 -- font
 config.font_size = 14
 config.font = wezterm.font_with_fallback({
-	-- "BerkeleyMonoVariable Nerd Font",
-	"JetbrainsMonoNL Nerd Font Mono",
+	"BerkeleyMonoVariable Nerd Font",
 	{
 		family = "Symbols Nerd Font Mono",
 		scale = 0.75,
@@ -34,7 +34,7 @@ config.window_background_opacity = 1
 config.window_decorations = "RESIZE"
 config.window_frame = {
 	font = wezterm.font({
-		family = "Berkeley Mono Variable",
+		family = "BerkeleyMonoVariable Nerd Font",
 		weight = "Regular",
 	}),
 }
