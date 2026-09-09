@@ -62,6 +62,7 @@ oauth_open_browser = true
 "brew:git-delta" = "latest"
 "brew:difftastic" = "latest"
 "brew:age" = "latest"
+"brew:htmlq" = "latest"
 # casks
 "brew-cask:raycast" = "latest"
 "brew-cask:rectangle" = "latest"
@@ -138,3 +139,7 @@ run = ["killall Dock || true", "killall Finder || true", "killall SystemUIServer
 
 [bootstrap.user]
 login_shell = "/opt/homebrew/bin/fish"
+
+[tasks.bootstrap]
+description = "install missing packages"
+run = ["mise run install:tailscale"]
