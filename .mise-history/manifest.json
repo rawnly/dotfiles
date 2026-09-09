@@ -20,6 +20,12 @@
       "variants": []
     },
     {
+      "path": "home/.config/sesh",
+      "autosave": true,
+      "encrypt": false,
+      "variants": []
+    },
+    {
       "path": "home/.config/tmux/tmux.conf",
       "autosave": true,
       "encrypt": false,
