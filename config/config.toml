@@ -32,6 +32,7 @@ oauth_client_id = "Iv23liD8jzu2sHUQcjSk"
 "~/.config/nvim" = { mode = "track" }
 "~/.config/sesh" = { mode = "track" }
 "~/.config/tmux/tmux.conf" = { mode = "track" }
+"~/.gitconfig" = { mode = "track" }
 "~/.gitignore_global" = { mode = "track" }
 
 # [settings.github]
