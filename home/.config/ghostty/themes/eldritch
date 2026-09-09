@@ -1,0 +1,36 @@
+## name: Eldritch
+## author: Eldritch Theme
+## upstream: https://github.com/eldritch-theme/eldritch.nvim
+
+background = #212337
+foreground = #ebfafa
+selection-foreground = #ebfafa
+selection-background = #bf4f8e
+
+# Colors can be changed by setting the 16 colors of `palette`, which each color
+# being defined as regular and bold.
+#
+# black
+palette = 0=#171928
+palette = 8=#7081d0
+# red
+palette = 1=#f16c75
+palette = 9=#f0313e
+# green
+palette = 2=#37f499
+palette = 10=#00FA82
+# yellow
+palette = 3=#f1fc79
+palette = 11=#c0c95f
+# blue
+palette = 4=#a48cf2
+palette = 12=#9071f4
+# purple
+palette = 5=#f265b5
+palette = 13=#fd92ce
+# aqua
+palette = 6=#04d1f9
+palette = 14=#39DDFD
+# white
+palette = 7=#ebfafa
+palette = 15=#ffffff
