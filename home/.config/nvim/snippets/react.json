@@ -1,0 +1,12 @@
+{
+  "component": {
+    "prefix": "cmp",
+    "body": [
+      "interface Props {}",
+      "",
+      "export function ${1:Component}(props: Props) {",
+      "\t${2://content}",
+      "}"
+    ]
+  }
+}
