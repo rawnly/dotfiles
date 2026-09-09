@@ -2,6 +2,12 @@
   "format": 1,
   "enrollment": [
     {
+      "path": "home/.config/fish",
+      "autosave": true,
+      "encrypt": false,
+      "variants": []
+    },
+    {
       "path": "home/.config/ghostty",
       "autosave": true,
       "encrypt": false,
@@ -16,5 +22,8 @@
   ],
   "exclude": [],
   "recipients": [],
-  "permissions": {}
+  "permissions": {
+    "home/.config/fish": 448,
+    "home/.config/fish/fish_variables": 384
+  }
 }

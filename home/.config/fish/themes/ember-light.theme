@@ -1,0 +1,33 @@
+# Ember Light fish theme
+# Source of truth: ../palette.json (variant: ember-light, accents_light)
+
+fish_color_normal 282418
+fish_color_command b84c30
+fish_color_keyword b84c30
+fish_color_quote 4a6830
+fish_color_redirection 3a6080
+fish_color_end 706070
+fish_color_error 905050
+fish_color_param 946030
+fish_color_comment 706070
+fish_color_selection --background=b84c30 --foreground=e6dac4
+fish_color_search_match --background=7a6820 --foreground=e6dac4
+fish_color_operator 7a6820
+fish_color_escape 386858
+fish_color_autosuggestion 706070
+fish_color_canceled --reverse
+fish_color_option 946030
+fish_color_history_current --bold
+fish_color_valid_path 386858 --underline
+fish_color_cd 7a6820
+fish_color_cwd 7a6820
+fish_color_cwd_root 905050
+fish_color_user b84c30
+fish_color_host 3a6080
+fish_color_host_remote 905050
+fish_color_status b84c30
+fish_pager_color_progress 706070
+fish_pager_color_prefix b84c30
+fish_pager_color_completion 282418
+fish_pager_color_description 4a6830
+fish_pager_color_selected_background --background=d8d0c0
