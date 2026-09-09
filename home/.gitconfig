@@ -1,59 +1,67 @@
 [user]
-	name = Federico
 	email = 16429579+rawnly@users.noreply.github.com
-	signingkey = /Users/federico.vitale/.ssh/id_github.pub
-[core]
-  pager = delta
-  editor = nvim --cmd 'let g:unception_block_while_host_edits=1'
-  excludesfile = ~/.gitignore_global
-[init]
-  defaultBranch = main
-[interactive]
-  diffFilter = delta --color-only
-[diff]
-  tool = deeelta
-  renames = copy
-[merge]
-  conflictstyle = zdiff3
-  tool = "nvim"
-[mergetool]
-  keepBackup = false
-  prompt = false
-[rebase]
-	updateRefs = true
-[pull]
-  rebase = true
-[push]
-  autoSetupRemote = true
-  default = current
+	name = Federico
+	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDCKF96xH82upsaknOufxypAf8RT/EsrZRP/YpREAZqnZaUSs1Shoph22QfWb103Zgm20T0BpnjVKPdQ272bli3C4mSgETfdI4tUZjJA7Q7yk3Ku8f3VGFbFBSIMrGsaLeDMAH9Cha136WpNaO1IsXAe1zKx6kIDgfhbXrsE3BMdgd038BEVdaUjT0yMuMcmi07VhosBYr703aKJAjsll2vgp7RYyaJaHZrs+6dMMAkZEDHoiPzGwkrNgbinZfhgmGePEw5YnNjorT5YWdo1cIVpuzQMmT7gKCnLvDE74ZPy4kQZ9lGnSK9qHfl+vBzrLof7VGUdIVyscEBuihJA2WcAXg63glHnrrYCNopxsKUcB0bFxA9Dqsr3He28wATsVt97IkGd6I+DK1B4nhhQ4dnkju/bBoSCbmvnVJLp/MhgE9CDVLm1UMXdpEDvZC6tLvlde5y6b7zghJkeWDSM32IaXci6OD0tMU6XzjtTJ1r2kQBUp8k6U18u/Y+KV8o/48=
+
+[commit]
+	gpgsign = true
+
 [filter "lfs"]
+	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-[gpg]
-	format = ssh
-[commit]
-	gpgsign = true
-[rerere]
-	enabled = true
+
+[core]
+    pager = delta
+    autocrlf = input
+
+[interactive]
+    diffFilter = delta --color-only
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+  	line-numbers = true
 
 [alias]
-  graph = !git log --oneline --graph
-  ll = log --all --decorate --oneline --graph
-  cleanup = !git branch --format="%(refname:short) %(upstream:track)" | rg gone | awk '{print $1}' | xargs -I{} git branch -D {}
-  pushtest = !git push --force origin $(git rev-parse --abbrev-ref HEAD):test 
-  pushstaging = !git push --force origin $(git rev-parse --abbrev-ref HEAD):staging
-  diffgrep = "!f() { git diff -U1 | grepdiff $1 --output-matching=hunk; }; f"
-  applygrep = "!f() { git diff -U1 | grepdiff $1 --output-matching=hunk | git apply --cached --unidiff-zero; }; f"
-	fp = fetch --prune --all
+	dotfiles = !git --git-dir=$HOME/.cfg/ --work-tree=$HOME
+	df = !git --git-dir=$HOME/.cfg/ --work-tree=$HOME
+	lazy = !lazygit
+	append = town append
+	compress = town compress
+	contribute = town contribute
+	diff-parent = town diff-parent
+	hack = town hack
+	kill = town kill
+	observe = town observe
+	park = town park
+	prepend = town prepend
+	propose = town propose
+	rename-branch = town rename-branch
+	repo = town repo
+	set-parent = town set-parent
+	ship = town ship
+	sync = town sync
 	wt = !worktree-manager
 	wtls = !worktree-manager list
 	wtrm = !worktree-manager remove
 
-[includeIf "gitdir:/Users/federico.vitale/Developer/satispay/"]
-	path = /Users/federico.vitale/Developer/satispay/.gitconfig-satispay
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+
 [url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+    insteadOf = https://github.com/
+
+[include]
+  path = "~/.config/delta/themes/nyx_darker.gitconfig"
+[init]
+	defaultBranch = main
