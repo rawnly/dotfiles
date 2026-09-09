@@ -1,3 +1,8 @@
+#:tombi schema.strict = false
+
+[bootstrap.brew.taps]
+"rawnly/tap" = "https://github.com/rawnly/tap"
+
 [tools]
 age = "latest"
 aube = "latest"
@@ -6,24 +11,12 @@ fnox = "latest"
 "github:can1357/oh-my-pi" = "latest"
 jq = "latest"
 node = "24"
-"npm:@satispay/lokalise-cli" = "latest"
 pinact = "latest"
 rust = "latest"
 sops = "latest"
 usage = "latest"
 wrangler = "latest"
 zizmor = "latest"
-
-
-[settings]
-idiomatic_version_file_enable_tools = ["python"]
-experimental = true
-
-[settings.sops]
-age_key_file = "/Users/federico.vitale/.config/mise/age.txt"
-
-[settings.github]
-oauth_client_id = "Iv23liD8jzu2sHUQcjSk"
 
 [dotfiles]
 "~/.config/fish" = { mode = "track" }
@@ -35,5 +28,11 @@ oauth_client_id = "Iv23liD8jzu2sHUQcjSk"
 "~/.gitconfig" = { mode = "track" }
 "~/.gitignore_global" = { mode = "track" }
 
-# [settings.github]
-# credential_command = "gh auth token"
+[settings]
+experimental = true
+
+[settings.github]
+credential_command = "gh auth token"
+oauth_client_id = "Iv23liD8jzu2sHUQcjSk"
+gh_cli_tokens = true
+oauth_open_browser = true
