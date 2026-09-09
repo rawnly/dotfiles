@@ -38,12 +38,6 @@
       "variants": []
     },
     {
-      "path": "home/.gitconfig",
-      "autosave": true,
-      "encrypt": false,
-      "variants": []
-    },
-    {
       "path": "home/.gitignore_global",
       "autosave": true,
       "encrypt": false,
@@ -54,7 +48,6 @@
   "recipients": [],
   "permissions": {
     "home/.config/fish": 448,
-    "home/.config/fish/fish_variables": 384,
-    "home/.gitconfig": 384
+    "home/.config/fish/fish_variables": 384
   }
 }

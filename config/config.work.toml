@@ -1,0 +1,8 @@
+[settings.github]
+oauth_client_id = "Iv23liD8jzu2sHUQcjSk"
+
+[dotfiles]
+"~/.gitconfig" = { mode = "track" }
+
+[tools]
+zizmor = "latest"

@@ -1,10 +1,82 @@
 #:tombi schema.strict = false
 
+[tools]
+age = "latest"
+aube = "latest"
+"github:can1357/oh-my-pi" = "latest"
+sops = "latest"
+usage = "latest"
+wrangler = "latest"
+
+[dotfiles]
+"~/.config/fish" = { mode = "track" }
+"~/.config/ghostty" = { mode = "track" }
+"~/.config/mise" = { mode = "track" }
+"~/.config/nvim" = { mode = "track" }
+"~/.config/sesh" = { mode = "track" }
+"~/.config/tmux/tmux.conf" = { mode = "track" }
+"~/.gitignore_global" = { mode = "track" }
+
+[settings]
+experimental = true
+
+[settings.github]
+credential_command = "gh auth token"
+gh_cli_tokens = true
+oauth_open_browser = true
+
 [bootstrap.brew.taps]
 "rawnly/tap" = "https://github.com/rawnly/tap"
 
 [bootstrap.packages]
 "brew:jq" = "latest"
+"brew:fish" = "latest"
+"brew:zoxide" = "latest"
+"brew:tmux" = "latest"
+"brew:herdr" = "latest"
+"brew:htop" = "latest"
+"brew:httpie" = "latest"
+"brew:curlie" = "latest"
+"brew:fd" = "latest"
+"brew:ripgrep" = "latest"
+"brew:sd" = "latest"
+"brew:eza" = "latest"
+"brew:tpack" = "latest"
+"brew:tldr" = "latest"
+"brew:starship" = "latest"
+"brew:oha" = "latest"
+"brew:hyperfine" = "latest"
+"brew:neovim" = "latest"
+"brew:mcfly" = "latest"
+"brew:mole" = "latest"
+"brew:lazygit" = "latest"
+"brew:lazydocker" = "latest"
+"brew:gh" = "latest"
+"brew:git" = "latest"
+"brew:bat" = "latest"
+"brew:glow" = "latest"
+"brew:fzf" = "latest"
+"brew:ffmpeg" = "latest"
+"brew:doggo" = "latest"
+"brew:downloader" = "latest"
+"brew:git-delta" = "latest"
+"brew:difftastic" = "latest"
+"brew:age" = "latest"
+# casks
+"brew-cask:raycast" = "latest"
+"brew-cask:rectangle" = "latest"
+"brew-cask:spotify" = "latest"
+"brew-cask:vivid-app" = "latest"
+"brew-cask:whatsapp" = "latest"
+"brew-cask:telegram" = "latest"
+"brew-cask:zed" = "latest"
+"brew-cask:markedit" = "latest"
+"brew-cask:notion" = "latest"
+"brew-cask:ghostty" = "latest"
+"brew-cask:codex" = "latest"
+"brew-cask:bruno" = "latest"
+"brew-cask:affinity" = "latest"
+"brew-cask:1password" = "latest"
 
 [bootstrap.mise_shell_activate]
 fish = "activate"
@@ -61,35 +133,8 @@ autohide-delay = 0
 # Faster dock animation
 autohide-time-modifier = 0.5
 
-[tools]
-age = "latest"
-aube = "latest"
-bun = "latest"
-fnox = "latest"
-"github:can1357/oh-my-pi" = "latest"
-node = "24"
-pinact = "latest"
-rust = "latest"
-sops = "latest"
-usage = "latest"
-wrangler = "latest"
-zizmor = "latest"
+[bootstrap.hooks.post-defaults]
+run = ["killall Dock || true", "killall Finder || true", "killall SystemUIServer || true"]
 
-[dotfiles]
-"~/.config/fish" = { mode = "track" }
-"~/.config/ghostty" = { mode = "track" }
-"~/.config/mise" = { mode = "track" }
-"~/.config/nvim" = { mode = "track" }
-"~/.config/sesh" = { mode = "track" }
-"~/.config/tmux/tmux.conf" = { mode = "track" }
-"~/.gitconfig" = { mode = "track" }
-"~/.gitignore_global" = { mode = "track" }
-
-[settings]
-experimental = true
-
-[settings.github]
-credential_command = "gh auth token"
-oauth_client_id = "Iv23liD8jzu2sHUQcjSk"
-gh_cli_tokens = true
-oauth_open_browser = true
+[bootstrap.user]
+login_shell = "/opt/homebrew/bin/fish"
