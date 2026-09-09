@@ -1,0 +1,37 @@
+[tools]
+age = "latest"
+aube = "latest"
+bun = "latest"
+fnox = "latest"
+"github:can1357/oh-my-pi" = "latest"
+jq = "latest"
+node = "24"
+"npm:@satispay/lokalise-cli" = "latest"
+pinact = "latest"
+rust = "latest"
+sops = "latest"
+usage = "latest"
+wrangler = "latest"
+zizmor = "latest"
+
+
+[settings]
+idiomatic_version_file_enable_tools = ["python"]
+experimental = true
+
+[settings.sops]
+age_key_file = "/Users/federico.vitale/.config/mise/age.txt"
+
+[settings.github]
+oauth_client_id = "Iv23liD8jzu2sHUQcjSk"
+
+[dotfiles]
+"~/.config/fish" = { mode = "track" }
+"~/.config/ghostty" = { mode = "track" }
+"~/.config/mise" = { mode = "track" }
+"~/.config/nvim" = { mode = "track" }
+"~/.config/sesh" = { mode = "track" }
+"~/.config/tmux/tmux.conf" = { mode = "track" }
+
+# [settings.github]
+# credential_command = "gh auth token"
