@@ -4,6 +4,7 @@
 age = "latest"
 aube = "latest"
 "github:can1357/oh-my-pi" = "latest"
+go = "1.27"
 sops = "latest"
 usage = "latest"
 wrangler = "latest"
@@ -11,6 +12,7 @@ wrangler = "latest"
 [dotfiles]
 "~/.config/fish" = { mode = "track" }
 "~/.config/ghostty" = { mode = "track" }
+"~/.config/herdr/config.toml" = { mode = "track" }
 "~/.config/mise" = { mode = "track" }
 "~/.config/nvim" = { mode = "track" }
 "~/.config/sesh" = { mode = "track" }

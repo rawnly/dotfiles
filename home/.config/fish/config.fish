@@ -11,7 +11,7 @@ set ZELLIJ_AUTO_ATTACH false
 set ZELLIJ_ENABLED false
 set -gx HOMEBREW_CASK_OPTS "--appdir=$HOME/Applications"
 
-set TMUX_ENABLED true
+set TMUX_ENABLED false
 set TMUX_DEFAULT_SESSION main
 
 set HERDR_ENABLED false
@@ -26,9 +26,6 @@ end
 source $__fish_config_dir/_load_extra.fish
 
 if status is-interactive
-
-    # At this point, specify the Zellij config dir, so we can launch it manually if we want to
-    # Check if our Terminal emulator is Ghostty
     if test "$ZELLIJ_ENABLED" = true
         if [ "$TERM" = xterm-ghostty ]
             if not set -q ZELLIJ
@@ -45,10 +42,9 @@ if status is-interactive
         end
     end
 
-    # args = ["new", "-A", "-s", "scratch"]
     if test "$TMUX_ENABLED" = true
         if not set -q TMUX
-          exec sesh connect $(
+            exec sesh connect $(
             sesh list --icons | fzf-tmux -p 80%,70% \
               --no-sort --ansi --border-label ' sesh ' --prompt '⚡  ' \
               --header '  ^a all ^t tmux ^g configs ^x zoxide ^d tmux kill ^f find' \
@@ -62,12 +58,6 @@ if status is-interactive
               --preview-window 'right:55%' \
               --preview 'sesh preview {}'
           )
-            # exec tmux new -A -s "$TMUX_DEFAULT_SESSION"
-            # if tmux has-session -t "$TMUX_DEFAULT_SESSION" 2>/dev/null
-            #     exec tmux attach-session -t "$TMUX_DEFAULT_SESSION"
-            # else
-            #     exec tmux new-session -s "$TMUX_DEFAULT_SESSION"
-            # end
         end
     end
 
@@ -77,22 +67,11 @@ if status is-interactive
         end
     end
 
-    # Theme 
-    # source $HOME/.config/fish/themes/nyx_darker.fish
-    # source $HOME/.config/fish/themes/ember.theme
-    # fish_config theme choose ember
-
     # Deferred Inits
     function _defer_mise --on-event fish_prompt
         mise activate fish | source
         functions -e _defer_mise
     end
-
-    # bvo init | source
-    # bosco init | source
-
-    alias sp bvo
-    alias wmg bosco
 end
 
 # Only add paths if they aren't already there (avoids reconstruction on every subshell)
@@ -114,9 +93,7 @@ if not set -q __fish_initialized
     set -gx __fish_initialized 1
 end
 
-# druk
-fish_add_path /Users/federico.vitale/.druk/bin
-
-# >>> grok installer >>>
-fish_add_path $HOME/.grok/bin
-# <<< grok installer <<<
+# herdr-automatic-rename: live tab naming hook
+for _f in $HOME/.config/herdr/plugins/github/herdr-automatic-rename-*/shell/hook.fish
+    test -r "$_f"; and source "$_f"; and break
+end
