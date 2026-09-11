@@ -37,3 +37,6 @@ credential_command = "gh auth token"
 oauth_client_id = "Iv23liD8jzu2sHUQcjSk"
 gh_cli_tokens = true
 oauth_open_browser = true
+
+[history]
+exclude = ["~/.config/nvim/lazy-lock.json"]
