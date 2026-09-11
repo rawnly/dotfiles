@@ -5,7 +5,7 @@ age = "latest"
 aube = "latest"
 "github:can1357/oh-my-pi" = "latest"
 go = "1.27"
-rust = "latest"
+"npm:@earendil-works/pi-coding-agent" = "latest"
 sops = "latest"
 usage = "latest"
 wrangler = "latest"
@@ -146,3 +146,6 @@ login_shell = "/opt/homebrew/bin/fish"
 [tasks.bootstrap]
 description = "install missing packages"
 run = ["mise run install:tailscale"]
+
+[history]
+exclude = ["~/.config/nvim/lazy-lock.json"]

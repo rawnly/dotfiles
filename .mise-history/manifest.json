@@ -50,7 +50,9 @@
       "variants": []
     }
   ],
-  "exclude": [],
+  "exclude": [
+    "~/.config/nvim/lazy-lock.json"
+  ],
   "recipients": [],
   "permissions": {
     "home/.config/fish": 448,
