@@ -145,3 +145,6 @@ login_shell = "/opt/homebrew/bin/fish"
 [tasks.bootstrap]
 description = "install missing packages"
 run = ["mise run install:tailscale"]
+
+[history]
+exclude = ["~/.config/nvim/lazy-lock.json"]
