@@ -1,32 +1,22 @@
 #:tombi schema.strict = false
 
-[bootstrap.brew.taps]
-"rawnly/tap" = "https://github.com/rawnly/tap"
-
 [tools]
 age = "latest"
 aube = "latest"
-bun = "latest"
-fnox = "latest"
 "github:can1357/oh-my-pi" = "latest"
-jq = "latest"
-node = "24"
-"npm:@earendil-works/pi-coding-agent" = "latest"
-pinact = "latest"
-rust = "latest"
+go = "1.27"
 sops = "latest"
 usage = "latest"
 wrangler = "latest"
-zizmor = "latest"
 
 [dotfiles]
 "~/.config/fish" = { mode = "track" }
 "~/.config/ghostty" = { mode = "track" }
+"~/.config/herdr/config.toml" = { mode = "track" }
 "~/.config/mise" = { mode = "track" }
 "~/.config/nvim" = { mode = "track" }
 "~/.config/sesh" = { mode = "track" }
 "~/.config/tmux/tmux.conf" = { mode = "track" }
-"~/.gitconfig" = { mode = "track" }
 "~/.gitignore_global" = { mode = "track" }
 
 [settings]
@@ -34,9 +24,124 @@ experimental = true
 
 [settings.github]
 credential_command = "gh auth token"
-oauth_client_id = "Iv23liD8jzu2sHUQcjSk"
 gh_cli_tokens = true
 oauth_open_browser = true
 
-[history]
-exclude = ["~/.config/nvim/lazy-lock.json"]
+[bootstrap.brew.taps]
+"rawnly/tap" = "https://github.com/rawnly/tap"
+
+[bootstrap.packages]
+"brew:jq" = "latest"
+"brew:fish" = "latest"
+"brew:zoxide" = "latest"
+"brew:tmux" = "latest"
+"brew:herdr" = "latest"
+"brew:htop" = "latest"
+"brew:httpie" = "latest"
+"brew:curlie" = "latest"
+"brew:fd" = "latest"
+"brew:ripgrep" = "latest"
+"brew:sd" = "latest"
+"brew:eza" = "latest"
+"brew:tpack" = "latest"
+"brew:tldr" = "latest"
+"brew:starship" = "latest"
+"brew:oha" = "latest"
+"brew:hyperfine" = "latest"
+"brew:neovim" = "latest"
+"brew:mcfly" = "latest"
+"brew:mole" = "latest"
+"brew:lazygit" = "latest"
+"brew:lazydocker" = "latest"
+"brew:gh" = "latest"
+"brew:git" = "latest"
+"brew:bat" = "latest"
+"brew:glow" = "latest"
+"brew:fzf" = "latest"
+"brew:ffmpeg" = "latest"
+"brew:doggo" = "latest"
+"brew:downloader" = "latest"
+"brew:git-delta" = "latest"
+"brew:difftastic" = "latest"
+"brew:age" = "latest"
+"brew:htmlq" = "latest"
+# casks
+"brew-cask:raycast" = "latest"
+"brew-cask:rectangle" = "latest"
+"brew-cask:spotify" = "latest"
+"brew-cask:vivid-app" = "latest"
+"brew-cask:whatsapp" = "latest"
+"brew-cask:telegram" = "latest"
+"brew-cask:zed" = "latest"
+"brew-cask:markedit" = "latest"
+"brew-cask:notion" = "latest"
+"brew-cask:ghostty" = "latest"
+"brew-cask:codex" = "latest"
+"brew-cask:bruno" = "latest"
+"brew-cask:affinity" = "latest"
+"brew-cask:1password" = "latest"
+
+[bootstrap.mise_shell_activate]
+fish = "activate"
+
+[bootstrap.macos.dock]
+autohide = true
+orientation = "left"
+magnification = true
+show_recents = false
+mru_spaces = false
+
+[bootstrap.macos.keyboard]
+fn_state = true
+initial_key_repeat = 10
+key_repeat = 1
+press_and_hold = false
+
+[bootstrap.macos.trackpad]
+tap_to_click = true
+three_finger_drag = true
+
+[bootstrap.macos.finder]
+preferred_view_style = "list"
+show_all_files = false
+show_pathbar = true
+show_status_bar = true
+show_extensions_warning = false
+
+[bootstrap.macos.defaults."NSGlobalDomain"]
+# Enable full keyboard access for all controls
+# (e.g. enable Tab in modal dialogs)
+AppleKeyboardUIMode = 3
+# Disable autocorrection
+NSAutomaticSpellingCorrectionEnabled = false
+# Disable auto-capitalization
+NSAutomaticCapitalizationEnabled = false
+# Default file save location to local disk
+NSDocumentSaveNewDocumentsToCloud = false
+
+[bootstrap.macos.defaults."com.apple.finder"]
+# When performing a search, search the current folder by default
+FXDefaultSearchScope = "SCcf"
+# Keep folders on top when sorting by name
+_FXSortFoldersFirst = true
+
+# Avoid creating .DS_Store files on network or USB volumes
+[bootstrap.macos.defaults."com.apple.desktopservices"]
+DSDontWriteNetworkStores = true
+DSDontWriteUSBStores = true
+
+[bootstrap.macos.defaults."com.apple.dock"]
+# Do not apply delay to dock animation
+autohide-delay = 0
+# Faster dock animation
+autohide-time-modifier = 0.5
+
+[bootstrap.hooks.post-defaults]
+run = ["killall Dock || true", "killall Finder || true", "killall SystemUIServer || true"]
+
+[bootstrap.user]
+login_shell = "/opt/homebrew/bin/fish"
+
+[tasks.bootstrap]
+description = "install missing packages"
+run = ["mise run install:tailscale"]

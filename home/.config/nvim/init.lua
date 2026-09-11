@@ -36,7 +36,6 @@ local options = {
 	winborder = "rounded",
 }
 
-
 for option, value in pairs(options) do
 	vim.opt[option] = value
 end
@@ -52,16 +51,15 @@ end
 
 require("config.lazy")
 
-vim.cmd.colorscheme("token-meridian")
+vim.cmd.colorscheme("0x96f")
 
-local theme = vim.trim(vim.fn.system('defaults read -g AppleInterfaceStyle'))
+local theme = vim.trim(vim.fn.system("defaults read -g AppleInterfaceStyle"))
 
-if theme ~= 'Dark' then
-  vim.o.background = 'light'
+if theme ~= "Dark" then
+	vim.o.background = "light"
 else
-  vim.o.background = 'dark'
+	vim.o.background = "dark"
 end
-
 
 -- let theme = vim.system('defaults read -g AppleInterfaceStyle')
 -- if theme ~= 'Dark'

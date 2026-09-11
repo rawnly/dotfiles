@@ -1,5 +1,12 @@
 return {
 	{
+		"aimdevlee/herdr-nvim-nav",
+		dependencies = { "christoomey/vim-tmux-navigator" }, -- omit if with_tmux = false
+		config = function()
+			require("herdr-nvim-nav").setup()
+		end,
+	},
+	{
 		"mrjones2014/smart-splits.nvim",
 		lazy = false,
 		build = "./kitty/install-kittens.bash",
