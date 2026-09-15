@@ -142,6 +142,27 @@ type = "plugin_action"
 command = "herdr-navigator.open"
 description = "jump to anything"
 
+[[keys.command]]
+key = "prefix+p"
+type = "shell"
+command = "gh pr view -w"
+
+[[keys.command]]
+key = "prefix+alt+p"
+type = "shell"
+command = "gh repo view -w"
+
+[[keys.command]]
+key = "prefix+alt+r"
+type = "plugin_action"
+command = "persiyanov.reviewr.toggle"
+
+[[keys.command]]
+key = "prefix+tab"
+type = "plugin_action"
+command = "herdr-navigator.jump-back"
+description = "last workspace"
+
 [server]
 # headless_cols = 120
 # headless_rows = 40
@@ -204,7 +225,7 @@ copy_on_select = true
 prompt_new_tab_name = false
 
 # Ask for a workspace name before interactive creation.
-prompt_new_workspace_name = true
+prompt_new_workspace_name = false
 
 # Draw borders around split panes.
 # "auto" draws them only for split panes, "always" also frames a lone pane
@@ -282,7 +303,7 @@ tab_bar_position = "bottom"
 # herdr = show in-app toasts
 # terminal = ask the outer terminal to show a desktop notification
 # system = ask the OS notification service directly
-# delivery = "off"
+delivery = "herdr"
 # delay_seconds = 1
 
 [ui.toast.herdr]

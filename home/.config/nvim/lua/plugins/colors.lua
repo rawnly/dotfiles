@@ -6,6 +6,7 @@ return {
 	},
 	{
 		"ThorstenRhau/token",
+		enabled = false,
 		version = "*",
 		opts = {
 			plugins = {
@@ -15,18 +16,21 @@ return {
 	},
 	{
 		"RRethy/base16-nvim",
+		enabled = false,
 		lazy = false,
 		priority = 1000,
 		config = function() end,
 	},
 	{
 		"Aejkatappaja/sora",
+		enabled = false,
 		lazy = false,
 		priority = 1000,
 		opts = {},
 	},
 	{
 		"wtfox/luna.nvim",
+		enabled = false,
 		lazy = false,
 		priority = 1000,
 		opts = {},
@@ -34,6 +38,7 @@ return {
 	{
 		"projekt0n/github-nvim-theme",
 		name = "github-theme",
+		enabled = false,
 		opts = {
 			options = {
 				transparent = false,
@@ -47,16 +52,19 @@ return {
 	},
 	{
 		"rebelot/kanagawa.nvim",
+		enabled = false,
 		opts = {},
 	},
 	{
 		"jpwol/thorn.nvim",
+		enabled = false,
 		priority = 1000,
 		opts = {},
 	},
 	{
 		"ember-theme/nvim",
 		name = "ember",
+		enabled = false,
 		priority = 1000,
 		opts = { variant = "ember" },
 	},
@@ -72,11 +80,13 @@ return {
 	},
 	{
 		"0xleodevv/oc-2.nvim",
+		enabled = false,
 		lazy = false,
 		priority = 1000,
 	},
 	{
 		"oskarnurm/koda.nvim",
+		enabled = false,
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
 		opts = {},

@@ -1,3 +1,26 @@
+-- Paint the final colors immediately, before lazy.nvim scans/loads any
+-- plugin spec. This closes the window where nvim's TUI shows the
+-- built-in default highlight groups (the visible startup "flash") while
+-- config.lazy/colorscheme are still loading.
+vim.opt.termguicolors = true
+vim.o.background = "dark"
+do
+	local hl = vim.api.nvim_set_hl
+	hl(0, "Normal", { bg = "#262427", fg = "#FCFCFC" })
+	hl(0, "NormalNC", { bg = "#262427", fg = "#FCFCFC" })
+	hl(0, "NormalFloat", { bg = "#322E32", fg = "#FCFCFC" })
+	hl(0, "EndOfBuffer", { bg = "#262427", fg = "#262427" })
+	hl(0, "SignColumn", { bg = "#262427" })
+	hl(0, "LineNr", { fg = "#A6A6A5", bg = "#262427" })
+	hl(0, "StatusLine", { fg = "#FCFCFC", bg = "#1C1B1C" })
+	hl(0, "StatusLineNC", { fg = "#A6A6A5", bg = "#1C1B1C" })
+	hl(0, "WinBar", { fg = "#FCFCFC", bg = "#1C1B1C" })
+	hl(0, "WinBarNC", { fg = "#A6A6A5", bg = "#1C1B1C" })
+	hl(0, "TabLine", { fg = "#A6A6A5", bg = "#1C1B1C" })
+	hl(0, "TabLineFill", { bg = "#1C1B1C" })
+	hl(0, "TabLineSel", { fg = "#FCFCFC", bg = "#262427" })
+end
+
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
 -- This is also a good place to setup other settings (vim.opt)
@@ -52,21 +75,6 @@ end
 require("config.lazy")
 
 vim.cmd.colorscheme("0x96f")
-
-local theme = vim.trim(vim.fn.system("defaults read -g AppleInterfaceStyle"))
-
-if theme ~= "Dark" then
-	vim.o.background = "light"
-else
-	vim.o.background = "dark"
-end
-
--- let theme = vim.system('defaults read -g AppleInterfaceStyle')
--- if theme ~= 'Dark'
--- else
--- endif
-
--- vim.o.background = vim.env.NVIM_BACKGROUND or "dark"
 
 require("polish")
 require("ui")

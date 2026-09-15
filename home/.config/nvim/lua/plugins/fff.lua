@@ -28,7 +28,6 @@ return {
 			status_text_color = true,
 		},
 	},
-	lazy = false,
 	keys = {
 		{
 			"<leader>ff",
