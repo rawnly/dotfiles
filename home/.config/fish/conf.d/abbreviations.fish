@@ -36,3 +36,14 @@ function tickets
         | jq -r '["ID","TITLE","URL"], (.[] | [.number,.title,.url]) | @tsv' \
         | column -t -s (printf '\t')
 end
+
+function kctx --description "Switch kubectl context"
+    set -q argv[1]
+    and set environment "$(string trim -r $argv[1])"
+
+    if test -n "$environment"
+        kubectl config use-context "services-eks-cluster-$environment"
+    else
+        kubectl config current-context
+    end
+end

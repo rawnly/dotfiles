@@ -3,9 +3,13 @@
 [tools]
 age = "latest"
 aube = "latest"
+"github:bjarneo/ku" = "latest"
 "github:can1357/oh-my-pi" = "latest"
 go = "1.27"
+k9s = "latest"
+kubectl = "latest"
 "npm:@earendil-works/pi-coding-agent" = "latest"
+podman = { version = "latest", rename_exe = "podman-remote" }
 sops = "latest"
 usage = "latest"
 wrangler = "latest"
