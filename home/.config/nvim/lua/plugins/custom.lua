@@ -1,8 +1,10 @@
--- my own plugins
+---@module "lazy.nvim"
+---@type LazySpec
 return {
 	{
 		"rawnly/targetprocess.nvim",
 		dev = true,
+		enabled = false,
 		opts = {
 			base_url = vim.env.TARGET_PROCESS_API_BASE_URL,
 			token = vim.env.TARGET_PROCESS_ACCESS_TOKEN,
@@ -24,11 +26,13 @@ return {
 		"rawnly/gh-actions-version.nvim",
 		enabled = false,
 		dev = true,
+		ft = "yaml",
 		opts = {},
 	},
 	{
 		"rawnly/gist.nvim",
 		dev = true,
+		cmd = { "GistCreate", "GistsList", "GistCreateFromFile" },
 		---@type Gist.Config
 		opts = {
 			platform = "termbin",
@@ -36,6 +40,7 @@ return {
 	},
 	{
 		"rawnly/nyx.nvim",
+		enabled = false,
 		dev = true,
 		lazy = false,
 		priority = 1000,

@@ -1,7 +1,8 @@
 return {
-  {
-    "pmizio/typescript-tools.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    opts = {},
-  }
+	{
+		"pmizio/typescript-tools.nvim",
+		ft = { "javascript", "typescript", "typescriptreact", "javascriptreact", "vue", "svelte" },
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		opts = {},
+	},
 }

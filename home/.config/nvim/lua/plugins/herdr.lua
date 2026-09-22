@@ -1,3 +1,3 @@
 return {
-	{ "ChmaraX/herdr-nvim", opts = {} },
+	{ "ChmaraX/herdr-nvim", event = "VeryLazy", opts = {} },
 }

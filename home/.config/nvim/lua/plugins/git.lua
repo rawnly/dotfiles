@@ -1,89 +1,83 @@
+---@module "lazy.nvim"
 ---@type LazySpec
 return {
-	-- { "akinsho/git-conflict.nvim", version = "*", config = true },
-	-- {
-	-- 	"HarshK97/diffmantic.nvim",
-	-- 	version = "*",
-	-- 	config = function()
-	-- 		require("diffmantic").setup()
-	-- 	end,
-	-- },
-	-- { "sindrets/diffview.nvim", enabled = false, config = true },
-	-- {
-	-- 	"NeogitOrg/neogit",
-	-- 	enabled = false,
-	-- 	dependencies = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"sindrets/diffview.nvim",
-	-- 	},
-	-- },
 	{
 		"lewis6991/gitsigns.nvim",
 		opts = {},
-		lazy = false,
-		keys = function()
-			local gitsigns = require("gitsigns")
-
-			return {
-				-- hunk
-				{
-					"<leader>gsh",
-					gitsigns.stage_hunk,
-					desc = "Stage Hunk",
-				},
-				{
-					"<leader>grh",
-					gitsigns.reset_hunk,
-					desc = "Reset Hunk",
-				},
-				{
-					mode = "v",
-					"<leader>gsh",
-					function()
-						gitsigns.stage_hunk({
-							vim.fn.line("."),
-							vim.fn.line("v"),
-						})
-					end,
-					desc = "Stage Hunk",
-				},
-				{
-					mode = "v",
-					"<leader>grh",
-					function()
-						gitsigns.reset_hunk({
-							vim.fn.line("."),
-							vim.fn.line("v"),
-						})
-					end,
-					desc = "Reset Hunk",
-				},
-				{
-					"<leader>gph",
-					gitsigns.preview_hunk_inline,
-					desc = "Preview hunk",
-				},
-				{
-					"<leader>gsb",
-					gitsigns.stage_buffer,
-					desc = "Stage Buffer",
-				},
-				{
-					"<leader>grb",
-					gitsigns.reset_buffer,
-					desc = "Reset Buffer",
-				},
-				{
-					"<leader>gb",
-					gitsigns.blame_line,
-					desc = "Blame Line",
-				},
-				{
-					"<leader>gB",
-					gitsigns.blame,
-					desc = "Toggle Blame",
-				},
-			}
-		end,
+		lazy = true,
+		keys = {
+			-- hunk
+			{
+				"<leader>gsh",
+				function()
+					require("gitsigns").stage_hunk()
+				end,
+				desc = "Stage Hunk",
+			},
+			{
+				"<leader>grh",
+				function()
+					require("gitsigns").reset_hunk()
+				end,
+				desc = "Reset Hunk",
+			},
+			{
+				mode = "v",
+				"<leader>gsh",
+				function()
+					require("gitsigns").stage_hunk({
+						vim.fn.line("."),
+						vim.fn.line("v"),
+					})
+				end,
+				desc = "Stage Hunk",
+			},
+			{
+				mode = "v",
+				"<leader>grh",
+				function()
+					require("gitsigns").reset_hunk({
+						vim.fn.line("."),
+						vim.fn.line("v"),
+					})
+				end,
+				desc = "Reset Hunk",
+			},
+			{
+				"<leader>gph",
+				function()
+					require("gitsigns").preview_hunk_inline()
+				end,
+				desc = "Preview hunk",
+			},
+			{
+				"<leader>gsb",
+				function()
+					require("gitsigns").stage_buffer()
+				end,
+				desc = "Stage Buffer",
+			},
+			{
+				"<leader>grb",
+				function()
+					require("gitsigns").reset_buffer()
+				end,
+				desc = "Reset Buffer",
+			},
+			{
+				"<leader>gb",
+				function()
+					require("gitsigns").blame_line()
+				end,
+				desc = "Blame Line",
+			},
+			{
+				"<leader>gB",
+				function()
+					require("gitsigns").blame()
+				end,
+				desc = "Toggle Blame",
+			},
+		},
 	},
 }

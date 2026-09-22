@@ -1,6 +1,9 @@
+---@module "lazy.nvim"
+---@type LazySpec
 return {
 	{
 		"jmbuhr/otter.nvim",
+		ft = "toml",
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
 		},

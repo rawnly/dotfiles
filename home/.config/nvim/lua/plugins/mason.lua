@@ -10,6 +10,7 @@ return {
 	},
 	{
 		"mason-org/mason-lspconfig.nvim",
+		event = "VeryLazy",
 		opts = {
 			automatic_enable = {
 				exclude = {

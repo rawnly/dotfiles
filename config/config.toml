@@ -3,16 +3,16 @@
 [tools]
 age = "latest"
 aube = "latest"
+"github:bjarneo/ku" = "latest"
 "github:can1357/oh-my-pi" = "latest"
 go = "1.27"
-java = "25"
-mr-boxington = "latest"
-"npm:@earendil-works/pi-coding-agent" = "0.87"
-pnpm = "12"
-rust = { version = "latest", mr_boxington = true }
+k9s = "latest"
+kubectl = "latest"
+"npm:@earendil-works/pi-coding-agent" = "latest"
+podman = { version = "latest", rename_exe = "podman-remote" }
 sops = "latest"
 usage = "latest"
-wrangler = { version = "latest", allow_builds = ["esbuild", "sharp", "workerd"] }
+wrangler = "latest"
 
 [dotfiles]
 "~/.config/fish" = { mode = "track" }
