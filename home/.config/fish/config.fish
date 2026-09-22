@@ -2,7 +2,7 @@ set fish_greeting
 
 set -gx EDITOR nvim
 set -gx MCFLY_KEY_SCHEME vim
-set -gx GROQ_API_KEY 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
+set -gx GROQ_API_KEY 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
 set -gx MANPAGER 'nvim +Man!'
 
 set ZELLIJ_AUTO_EXIT true
