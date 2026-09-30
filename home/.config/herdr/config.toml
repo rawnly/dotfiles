@@ -137,7 +137,7 @@ type = "plugin_action"
 command = "herdr-nvim-nav.right"
 
 [[keys.command]]
-key = "prefix+t"
+key = "prefix+shift+o"
 type = "plugin_action"
 command = "herdr-navigator.open"
 description = "jump to anything"
@@ -162,6 +162,18 @@ key = "prefix+tab"
 type = "plugin_action"
 command = "herdr-navigator.jump-back"
 description = "last workspace"
+
+# [[keys.command]]
+# key = "prefix+i"
+# type = "plugin_action"
+# command = "chmarax.herdr-nvim.pick-file"
+# description = "open file from agent output"
+
+[[keys.command]]
+key = "prefix+i"
+type = "plugin_action"
+command = "dev.rawnly.bracco.pick"
+description = "Pick a file to edit"
 
 [server]
 # headless_cols = 120

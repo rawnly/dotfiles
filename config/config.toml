@@ -1,3 +1,4 @@
+wrappers = { cargo = { command = "mbx", env = { MBX_CARGO_SHIM_MODE = "1" } } }
 #:tombi schema.strict = false
 
 [tools]
@@ -8,7 +9,8 @@ aube = "latest"
 go = "1.27"
 k9s = "latest"
 kubectl = "latest"
-"npm:@earendil-works/pi-coding-agent" = "latest"
+node = "24.12.0"
+"npm:@earendil-works/pi-coding-agent" = "0.99.1"
 podman = { version = "latest", rename_exe = "podman-remote" }
 sops = "latest"
 usage = "latest"
@@ -153,3 +155,7 @@ run = ["mise run install:tailscale"]
 
 [history]
 exclude = ["~/.config/nvim/lazy-lock.json"]
+
+[env]
+PI_OFFLINE = "1"
+PI_TELEMETRY = "0"

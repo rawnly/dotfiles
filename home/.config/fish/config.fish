@@ -5,6 +5,9 @@ set -gx MCFLY_KEY_SCHEME vim
 set -gx GROQ_API_KEY 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
 set -gx MANPAGER 'nvim +Man!'
 
+set -gx BRACCO_VIM true
+set -gx BRACCO_PREVIEW 'bat --theme luna -p {}'
+
 set ZELLIJ_AUTO_EXIT true
 set ZELLIJ_CONFIG_DIR "$HOME/.config/zellij"
 set ZELLIJ_AUTO_ATTACH false

@@ -55,6 +55,7 @@
   ],
   "recipients": [],
   "permissions": {
+    "config/config.toml": 384,
     "home/.config/fish": 448,
     "home/.config/fish/fish_variables": 384
   }
