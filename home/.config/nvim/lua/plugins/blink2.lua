@@ -27,9 +27,6 @@ return {
 			end,
 		},
 	},
-	build = function()
-		require("blink.cmp").build():pwait()
-	end,
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
 	opts = {
@@ -64,8 +61,10 @@ return {
 				enabled = true,
 			},
 		},
+		-- Xcode 27 currently produces an invalid Mach-O binary for blink's Rust matcher.
+		-- Use the built-in implementation until its linker compatibility is restored.
 		fuzzy = {
-			implementation = "rust",
+			implementation = "lua",
 			sorts = {
 				"exact",
 				"score",

@@ -8,7 +8,7 @@ aube = "latest"
 go = "1.27"
 k9s = "latest"
 kubectl = "latest"
-"npm:@earendil-works/pi-coding-agent" = "latest"
+"npm:@earendil-works/pi-coding-agent" = "1.0.0"
 podman = { version = "latest", rename_exe = "podman-remote" }
 sops = "latest"
 usage = "latest"
@@ -153,3 +153,7 @@ run = ["mise run install:tailscale"]
 
 [history]
 exclude = ["~/.config/nvim/lazy-lock.json"]
+
+[env]
+PI_TELEMETRY = "0"
+PI_OFFLINE = "1"
