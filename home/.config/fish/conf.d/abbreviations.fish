@@ -27,6 +27,8 @@ abbr -a gs "git status -s"
 
 abbr -a gr 'cd $(git rev-parse --show-toplevel)'
 
+alias br 'bracco --edit --preview "bat -p --theme luna {}" --vim'
+
 function tickets
     set -q argv[1]
     and set issue_state "$argv[1]"

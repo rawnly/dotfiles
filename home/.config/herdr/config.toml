@@ -45,12 +45,12 @@ reload_config = "prefix+shift+r"
 # goto = "prefix+g"
 # new_workspace = "prefix+shift+n"
 # new_worktree = "prefix+shift+g"
-open_worktree = "prefix+o" # optional, unset by default
+open_worktree = "prefix+o"  # optional, unset by default
 # remove_worktree = ""  # optional, unset by default; opens confirmation
 rename_workspace = "prefix+shift+w"
 # close_workspace = "prefix+shift+d"
-previous_workspace = "prefix+[" # optional, unset by default
-next_workspace = "prefix+]" # optional, unset by default
+previous_workspace = "prefix+["  # optional, unset by default
+next_workspace = "prefix+]"  # optional, unset by default
 # previous_agent = ""     # optional, unset by default
 # next_agent = ""         # optional, unset by default
 # focus_agent = ""        # optional indexed binding, e.g. "prefix+alt+1..9"
@@ -76,7 +76,7 @@ edit_scrollback = "prefix+e"
 split_vertical = "prefix+|"
 split_horizontal = "prefix+minus"
 # close_pane = "prefix+x"
-zoom = "prefix+z" # legacy alias: fullscreen
+zoom = "prefix+z"  # legacy alias: fullscreen
 # resize_mode = "prefix+r"
 # resize_pane_left = ""   # optional, e.g. "ctrl+shift+alt+left" resizes without entering resize mode
 # resize_pane_down = ""   # optional, e.g. "ctrl+shift+alt+down"
@@ -137,7 +137,7 @@ type = "plugin_action"
 command = "herdr-nvim-nav.right"
 
 [[keys.command]]
-key = "prefix+t"
+key = "prefix+shift+o"
 type = "plugin_action"
 command = "herdr-navigator.open"
 description = "jump to anything"
@@ -163,11 +163,17 @@ type = "plugin_action"
 command = "herdr-navigator.jump-back"
 description = "last workspace"
 
+# [[keys.command]]
+# key = "prefix+i"
+# type = "plugin_action"
+# command = "chmarax.herdr-nvim.pick-file"
+# description = "open file from agent output"
+
 [[keys.command]]
 key = "prefix+i"
 type = "plugin_action"
 command = "dev.rawnly.bracco.pick"
-description = "Pick file"
+description = "Pick a file to edit"
 
 [server]
 # headless_cols = 120

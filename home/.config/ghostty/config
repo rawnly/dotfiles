@@ -28,10 +28,15 @@ font-thicken-strength = 75
 
 # macOS Settings
 macos-titlebar-style = transparent
-macos-icon = xray
-macos-icon-frame = plastic
+# macos-icon = retro
+# macos-icon-frame = plastic
 macos-non-native-fullscreen = true
 macos-option-as-alt=true
+# icon
+macos-icon = custom-style
+macos-icon-frame = plastic
+macos-icon-ghost-color = #00ccff
+macos-icon-screen-color = #ffffff,#ffffff
 
 # Mouse
 mouse-hide-while-typing = true

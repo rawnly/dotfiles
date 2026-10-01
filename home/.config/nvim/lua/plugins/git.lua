@@ -80,4 +80,47 @@ return {
 			},
 		},
 	},
+	{
+		"pwntester/octo.nvim",
+		cmd = "Octo",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		opts = {
+			picker = "snacks", -- oppure telescope / fzf-lua / default
+		},
+		keys = {
+			{
+				"<leader>op",
+				"<CMD>Octo pr list<CR>",
+				desc = "List PRs",
+			},
+			{
+				"<leader>opc",
+				"<CMD>Octo pr create<CR>",
+				desc = "Create PR",
+			},
+			{
+				"<leader>pc",
+				"<CMD>Octo comment add<CR>",
+				desc = "PR Comment",
+			},
+			{
+				"<leader>ps",
+				"<CMD>Octo comment suggest<CR>",
+				desc = "PR Suggestion",
+			},
+
+			{
+				"<leader>prs",
+				"<CMD>Octo review<CR>",
+				desc = "Start Review",
+			},
+			{
+				"<leader>prl",
+				"<CMD>Octo review list<CR>",
+				desc = "List Reviews",
+			},
+		},
+	},
 }
