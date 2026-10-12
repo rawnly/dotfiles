@@ -10,7 +10,7 @@ go = "1.27"
 k9s = "latest"
 kubectl = "latest"
 node = "24.12.0"
-"npm:@earendil-works/pi-coding-agent" = "0.99.1"
+"npm:@earendil-works/pi-coding-agent" = "1.0.4"
 podman = { version = "latest", rename_exe = "podman-remote" }
 sops = "latest"
 usage = "latest"
@@ -28,6 +28,7 @@ wrangler = "latest"
 
 [settings]
 experimental = true
+auto_update = true
 
 [settings.github]
 credential_command = "gh auth token"
@@ -36,8 +37,11 @@ oauth_open_browser = true
 
 [bootstrap.brew.taps]
 "rawnly/tap" = "https://github.com/rawnly/tap"
+"crmne/tap" = "https://github.com/crmne/tap"
 
 [bootstrap.packages]
+"brew:crmne/tap/spotifast" = "latest"
+"brew:crmne/tap/zapfast" = "latest"
 "brew:jq" = "latest"
 "brew:fish" = "latest"
 "brew:zoxide" = "latest"
@@ -67,7 +71,6 @@ oauth_open_browser = true
 "brew:fzf" = "latest"
 "brew:ffmpeg" = "latest"
 "brew:doggo" = "latest"
-"brew:downloader" = "latest"
 "brew:git-delta" = "latest"
 "brew:difftastic" = "latest"
 "brew:age" = "latest"
