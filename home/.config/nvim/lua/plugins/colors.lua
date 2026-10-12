@@ -1,8 +1,10 @@
 ---@type LazySpec
 return {
 	{
-		"filipjanevski/0x96f.nvim",
+		"rawnly/0x96f.nvim",
 		priority = 1000,
+		opts = { transparent = true },
+		dev = true,
 	},
 	{
 		"ThorstenRhau/token",

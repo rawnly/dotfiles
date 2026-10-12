@@ -189,4 +189,6 @@ if test -n "$VESPER_TERMINAL_ID"
 end
 
 # Report integration health back to the app via OSC 7777
-printf '\e]7777;prompt=%s\a' "Starship"
+if status is-interactive
+    printf '\e]7777;prompt=%s\a' "Starship"
+end
