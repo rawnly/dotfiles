@@ -4,6 +4,8 @@ wrappers = { cargo = { command = "mbx", env = { MBX_CARGO_SHIM_MODE = "1" } } }
 [tools]
 age = "latest"
 aube = "latest"
+awscli = { version = "latest", symlink_bins = "true" }
+gh = "latest"
 "github:bjarneo/ku" = "latest"
 "github:can1357/oh-my-pi" = "latest"
 go = "1.27"
@@ -29,11 +31,19 @@ wrangler = "latest"
 [settings]
 experimental = true
 auto_update = true
+minimum_release_age = "7d"
 
 [settings.github]
-credential_command = "gh auth token"
+credential_command = 'gh auth token --hostname "$MISE_CREDENTIAL_HOST"'
 gh_cli_tokens = true
 oauth_open_browser = true
+
+[settings.status]
+show_tools = false
+
+[settings.self_update]
+minimum_release_age = "24h"
+auto = true
 
 [bootstrap.brew.taps]
 "rawnly/tap" = "https://github.com/rawnly/tap"

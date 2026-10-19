@@ -4,10 +4,8 @@ auto-update-channel = tip
 
 # Theme
 theme = 0x96f
-# theme = dark:token-meridian-dark,light:token-meridian-light
-#base16-mountain
-background-blur = true
-background-opacity = 0.9
+background-blur = 50
+background-opacity = 0.85
 
 # Clipboard
 clipboard-read = "allow"
