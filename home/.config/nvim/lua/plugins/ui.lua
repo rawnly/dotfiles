@@ -53,7 +53,6 @@ return {
 					"mason",
 				},
 				options = {
-					theme = require("0x96f").get_lualine_theme(),
 					globalstatus = vim.o.laststatus == 3,
 					disabled_filetypes = {
 						statusline = {

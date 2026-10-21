@@ -74,7 +74,7 @@ end
 
 require("config.lazy")
 
-vim.cmd.colorscheme("0x96f")
+vim.cmd.colorscheme("tokyonight")
 
 require("polish")
 require("ui")

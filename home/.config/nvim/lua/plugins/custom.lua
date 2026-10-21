@@ -24,10 +24,13 @@ return {
 	},
 	{
 		"rawnly/gh-actions-version.nvim",
-		enabled = false,
 		dev = true,
 		ft = "yaml",
-		opts = {},
+		cmd = "GhActionsVersion",
+		opts = {
+			trusted_orgs = { "satispay-tech" },
+			trust_current_org = true,
+		},
 	},
 	{
 		"rawnly/gist.nvim",

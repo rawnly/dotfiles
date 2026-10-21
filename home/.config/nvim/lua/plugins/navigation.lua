@@ -9,7 +9,6 @@ return {
 	},
 	{
 		"mrjones2014/smart-splits.nvim",
-		build = "./kitty/install-kittens.bash",
 		keys = {
 			{ "|", ":vsplit<CR>" },
 			-- resize splits
@@ -38,34 +37,34 @@ return {
 				end,
 			},
 			-- moving between splits
-			{
-				"<C-h>",
-				function()
-					require("smart-splits").move_cursor_left()
-				end,
-				mode = { "n", "i", "t" },
-			},
-			{
-				"<C-j>",
-				function()
-					require("smart-splits").move_cursor_down()
-				end,
-				mode = { "n", "i", "t" },
-			},
-			{
-				"<C-k>",
-				function()
-					require("smart-splits").move_cursor_up()
-				end,
-				mode = { "n", "i", "t" },
-			},
-			{
-				"<C-l>",
-				function()
-					require("smart-splits").move_cursor_right()
-				end,
-				mode = { "n", "i", "t" },
-			},
+			-- {
+			-- 	"<C-h>",
+			-- 	function()
+			-- 		require("smart-splits").move_cursor_left()
+			-- 	end,
+			-- 	mode = { "n", "i", "t" },
+			-- },
+			-- {
+			-- 	"<C-j>",
+			-- 	function()
+			-- 		require("smart-splits").move_cursor_down()
+			-- 	end,
+			-- 	mode = { "n", "i", "t" },
+			-- },
+			-- {
+			-- 	"<C-k>",
+			-- 	function()
+			-- 		require("smart-splits").move_cursor_up()
+			-- 	end,
+			-- 	mode = { "n", "i", "t" },
+			-- },
+			-- {
+			-- 	"<C-l>",
+			-- 	function()
+			-- 		require("smart-splits").move_cursor_right()
+			-- 	end,
+			-- 	mode = { "n", "i", "t" },
+			-- },
 		},
 	},
 }

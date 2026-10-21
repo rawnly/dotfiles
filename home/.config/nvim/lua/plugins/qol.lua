@@ -10,7 +10,7 @@ return {
 			library = {
 				{ path = "snacks.nvim", words = { "Snacks" } },
 				{ path = "lazy.nvim", words = { "LazyVim", "LazySpec" } },
-				{ path = "typescript-tools.nvim", words = { "Settings" } },
+				-- { path = "typescript-tools.nvim", words = { "Settings" } },
 				{ path = "tabby", words = { "TabbyConfig" } },
 				{ path = "wezterm-types", mods = { "wezterm" } },
 			},

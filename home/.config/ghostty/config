@@ -3,9 +3,9 @@ auto-update = download
 auto-update-channel = tip
 
 # Theme
-theme = 0x96f
+theme = TokyoNight
 background-blur = 50
-background-opacity = 0.85
+background-opacity = 0.98
 
 # Clipboard
 clipboard-read = "allow"
