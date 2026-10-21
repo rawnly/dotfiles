@@ -97,10 +97,10 @@ return {
 		"folke/tokyonight.nvim",
 		lazy = true,
 		priority = 1000,
-		enabled = false,
+		enabled = true,
 		opts = {
 			style = "night",
-			transparent = false,
+			transparent = true,
 			styles = {
 				keywords = {
 					italic = true,

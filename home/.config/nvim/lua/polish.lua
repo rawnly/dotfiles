@@ -5,6 +5,8 @@ vim.filetype.add({
 	},
 })
 
+vim.lsp.codelens.enable(true)
+
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(args)
 		local lsp_keys = require("mappings.lsp")

@@ -1,3 +1,5 @@
+local colo = require("colo")
+
 -- Paint the final colors immediately, before lazy.nvim scans/loads any
 -- plugin spec. This closes the window where nvim's TUI shows the
 -- built-in default highlight groups (the visible startup "flash") while
@@ -74,7 +76,7 @@ end
 
 require("config.lazy")
 
-vim.cmd.colorscheme("0x96f")
+vim.cmd.colorscheme(colo.theme)
 
 require("polish")
 require("ui")

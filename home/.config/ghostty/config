@@ -3,11 +3,11 @@ auto-update = download
 auto-update-channel = tip
 
 # Theme
-theme = 0x96f
+theme = TokyoNight
 # theme = dark:token-meridian-dark,light:token-meridian-light
 #base16-mountain
-background-blur = true
-background-opacity = 0.9
+background-blur = 25
+background-opacity = 0.9
 
 # Clipboard
 clipboard-read = "allow"
