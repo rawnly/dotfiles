@@ -3,68 +3,57 @@ return {
 		"aimdevlee/herdr-nvim-nav",
 		event = "VeryLazy",
 		dependencies = { "christoomey/vim-tmux-navigator" }, -- omit if with_tmux = false
+		enabled = vim.env.HERDR_ENV == 1,
 		config = function()
 			require("herdr-nvim-nav").setup()
 		end,
 	},
 	{
 		"mrjones2014/smart-splits.nvim",
-		keys = {
-			{ "|", ":vsplit<CR>" },
-			-- resize splits
+		version = "^3.0.0",
+		dependencies = {
 			{
-				"<A-h>",
-				function()
-					require("smart-splits").resize_left()
-				end,
+				"rawnly/smart-splits-backend-rex",
+				dev = true,
+				opts = {},
 			},
-			{
-				"<A-k>",
-				function()
-					require("smart-splits").resize_up()
-				end,
-			},
-			{
-				"<A-j>",
-				function()
-					require("smart-splits").resize_down()
-				end,
-			},
-			{
-				"<A-l>",
-				function()
-					require("smart-splits").resize_right()
-				end,
-			},
-			-- moving between splits
-			-- {
-			-- 	"<C-h>",
-			-- 	function()
-			-- 		require("smart-splits").move_cursor_left()
-			-- 	end,
-			-- 	mode = { "n", "i", "t" },
-			-- },
-			-- {
-			-- 	"<C-j>",
-			-- 	function()
-			-- 		require("smart-splits").move_cursor_down()
-			-- 	end,
-			-- 	mode = { "n", "i", "t" },
-			-- },
-			-- {
-			-- 	"<C-k>",
-			-- 	function()
-			-- 		require("smart-splits").move_cursor_up()
-			-- 	end,
-			-- 	mode = { "n", "i", "t" },
-			-- },
-			-- {
-			-- 	"<C-l>",
-			-- 	function()
-			-- 		require("smart-splits").move_cursor_right()
-			-- 	end,
-			-- 	mode = { "n", "i", "t" },
-			-- },
 		},
+		opts = {
+			mux = {
+				backend = "smart-splits-backend-rex",
+			},
+		},
+		keys = function()
+			local ss = require("smart-splits")
+
+			return {
+				{ "|", ":vsplit<CR>" },
+				{ "-", ":split<CR>" },
+				-- resize splits
+				{ "<A-h>", ss.resize_left },
+				{ "<A-k>", ss.resize_up },
+				{ "<A-j>", ss.resize_down },
+				{ "<A-l>", ss.resize_right },
+				-- moving between splits
+				{
+					"<C-h>",
+					function()
+						ss.move_cursor_left({
+							at_edge = "split",
+						})
+					end,
+				},
+				{
+					"<C-l>",
+					function()
+						ss.move_cursor_right({
+							at_edge = "split",
+						})
+					end,
+				},
+				{ "<C-j>", ss.move_cursor_down },
+				{ "<C-k>", ss.move_cursor_up },
+			}
+		end,
 	},
 }

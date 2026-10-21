@@ -32,7 +32,7 @@ return {
 				"tombi",
 				"docker_compose_language_service",
 				"lua_ls",
-				-- "tsc",
+				"tsc",
 				-- "docker-language-server",
 				-- "fish-lsp",
 				-- "css-lsp",

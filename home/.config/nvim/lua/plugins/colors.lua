@@ -100,7 +100,7 @@ return {
 		enabled = true,
 		opts = {
 			style = "night",
-			transparent = false,
+			transparent = true,
 			styles = {
 				keywords = {
 					italic = true,
