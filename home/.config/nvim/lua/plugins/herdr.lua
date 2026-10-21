@@ -6,9 +6,16 @@ return {
 		opts = {},
 	},
 	{
-		"rawnly/rex-nvim",
-		opts = {},
+		"rawnly/rex.nvim",
 		event = "VeryLazy",
 		dev = true,
+		opts = {
+			agent_scope = "tab",
+			preferred_agent = {
+				cmd = "pi",
+				split = "right",
+				ratio = 50,
+			},
+		},
 	},
 }
