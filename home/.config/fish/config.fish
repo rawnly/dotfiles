@@ -29,6 +29,10 @@ end
 source $__fish_config_dir/_load_extra.fish
 
 if status is-interactive
+    if test "$TERM_PROGRAM" = rex
+        set -g fish_handle_reflow 0
+    end
+
     if test "$ZELLIJ_ENABLED" = true
         if [ "$TERM" = xterm-ghostty ]
             if not set -q ZELLIJ
