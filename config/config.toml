@@ -30,6 +30,7 @@ wrangler = "latest"
 "~/.config/sesh" = { mode = "track" }
 "~/.config/tmux/tmux.conf" = { mode = "track" }
 "~/.gitignore_global" = { mode = "track" }
+"~/Pictures/wallpapers/texture_wallpaper" = {}
 
 [settings]
 experimental = true
