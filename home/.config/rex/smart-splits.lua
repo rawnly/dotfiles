@@ -15,14 +15,21 @@ local function is_vim(ctx)
 end
 
 -- alt+hjkl to resize
-for key, direction in pairs({ h = "left", j = "down", k = "up", l = "right" }) do
-	rex.bind("alt+" .. key, function(ctx)
+
+rex.action({
+	name = "smart_splits_resize",
+	title = "Smart Splits: Resize Pane",
+	run = function(ctx, args)
 		if is_vim(ctx) then
-			return false
+			rex.client.queue("pane.send_key", { key = args.key })
+		else
+			rex.client.queue("pane.resize", { direction = args.direction, amount = 3 })
 		end
-		rex.client.queue("pane.resize", { direction = direction, amount = 3 })
-		return true
-	end)
+	end,
+})
+
+for key, direction in pairs({ h = "left", j = "down", k = "up", l = "right" }) do
+	rex.bind("alt+" .. key, "smart_splits_resize", { key = "alt+" .. key, direction = direction })
 end
 
 -- ctrl+hjkl to move
