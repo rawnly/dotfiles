@@ -17,11 +17,6 @@ rex.bind("ctrl+a>g", "quick_open", {
 	ratio = 0.5,
 	zoom = false,
 })
-rex.bind("ctrl+a>p", "quick_open", {
-	cmd = { "nvim" },
-	ratio = 0.5,
-	zoom = false,
-})
 
 rex.bind("cmd+shift+r", "client.config.reload")
 rex.bind("cmd+enter", "pane.split.right")
@@ -29,3 +24,8 @@ rex.bind("alt+enter", "pane.split.auto")
 rex.bind("shift+cmd+enter", "pane.split.down")
 rex.bind("cmd+/", "pane.zoom")
 rex.bind("cmd+s", "client.sidebar.toggle")
+
+rex.bind("alt+shift+h", "move_pane", { direction = "left" }) -- move split to the left
+rex.bind("alt+shift+j", "move_pane", { direction = "down" }) -- move split down
+rex.bind("alt+shift+k", "move_pane", { direction = "up" }) -- move split up
+rex.bind("alt+shift+l", "move_pane", { direction = "right" }) -- move split to the right
