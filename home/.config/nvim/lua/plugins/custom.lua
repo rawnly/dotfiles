@@ -25,6 +25,7 @@ return {
 	{
 		"rawnly/gh-actions-version.nvim",
 		dev = true,
+		enabled = vim.env.PROFILE == "work",
 		ft = "yaml",
 		cmd = "GhActionsVersion",
 		opts = {

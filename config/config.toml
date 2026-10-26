@@ -174,3 +174,5 @@ exclude = ["~/.config/nvim/lazy-lock.json"]
 [env]
 PI_OFFLINE = "1"
 PI_TELEMETRY = "0"
+abc = "def"
+x = "y"

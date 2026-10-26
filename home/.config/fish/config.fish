@@ -2,7 +2,6 @@ set fish_greeting
 
 set -gx EDITOR nvim
 set -gx MCFLY_KEY_SCHEME vim
-set -gx GROQ_API_KEY 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
 set -gx MANPAGER 'nvim +Man!'
 
 set -gx BRACCO_VIM true
@@ -16,7 +15,6 @@ set -gx HOMEBREW_CASK_OPTS "--appdir=$HOME/Applications"
 
 set TMUX_ENABLED false
 set TMUX_DEFAULT_SESSION main
-
 set HERDR_ENABLED false
 
 set -x GOPATH $HOME/.go
