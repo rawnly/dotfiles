@@ -19,6 +19,7 @@ end
 rex.action({
 	name = "popup",
 	title = "Toggle Popup",
+	-- Argument types: see `config.PopupArgs` in types/rex.lua.
 	args = {
 		type = "object",
 		properties = {
@@ -28,6 +29,8 @@ rex.action({
 			cwd = { type = "string" },
 		},
 	},
+	---@param ctx rex.Context
+	---@param args config.PopupArgs
 	run = function(ctx, args)
 		local bounds = args.bounds or { 0.1, 0.1, 0.8, 0.8 }
 		local cwd = args.cwd or pane.cwd(ctx)

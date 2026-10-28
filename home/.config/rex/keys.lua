@@ -37,7 +37,7 @@ rex.bind("cmd+shift+r", "client.config.reload")
 ---------------------------------------------------------------------------
 -- Swap the focused split with its neighbour.
 for key, direction in pairs({ h = "left", j = "down", k = "up", l = "right" }) do
-	rex.bind("alt+shift+" .. key, "move_pane", { direction = direction })
+	rex.bind("alt+shift+" .. key, "pane.move." .. direction)
 end
 
 -- smart-splits: focus (ctrl+hjkl) and resize (alt+hjkl), nvim-aware.
@@ -53,8 +53,14 @@ local scratch = { name = "shell", bounds = BOUNDS.full }
 rex.bind(prefix("d"), "popup", scratch)
 rex.bind("f12", "popup", scratch)
 
-rex.bind(prefix("g"), "popup", { name = "lazygit", cmd = { "lazygit" }, bounds = BOUNDS.full })
-rex.bind(prefix("shift+g"), "quick_open", { cmd = { "lazygit" }, ratio = 0.5 }) -- as a split
+rex.bind(prefix("g"), "client.mode.enter", {
+	name = "git",
+	once = true,
+})
+
+rex.bind("git/g", "popup", { name = "lazygit", cmd = { "lazygit" }, bounds = BOUNDS.full })
+
+rex.bind("git/shift+g", "quick_open", { cmd = { "lazygit" }, ratio = 0.5 }) -- as a split
 
 ---------------------------------------------------------------------------
 -- One-shot floats

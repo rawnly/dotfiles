@@ -43,7 +43,7 @@ return {
 		enabled = true,
 		opts = {
 			options = {
-				transparent = false,
+				transparent = true,
 				styles = {
 					comments = "italic",
 					keywords = "bold",
@@ -59,7 +59,7 @@ return {
 	},
 	{
 		"jpwol/thorn.nvim",
-		enabled = false,
+		enabled = true,
 		priority = 1000,
 		opts = {},
 	},

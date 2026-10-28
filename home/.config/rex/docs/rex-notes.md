@@ -11,7 +11,6 @@ actions/              one rex.action per file
   quick-open.lua        run a command in a split or a float
   popup.lua             toggleable floating pane that keeps running (shell, lazygit, ...)
   edit-scrollback.lua   pane scrollback in nvim, in a float
-  move-pane.lua         swap the focused split with a neighbour
 lib/pane.lua          shared helpers: cwd(), float(), shell_layout(), check(), bin()
 bin/                  helper scripts that run inside floats
 types/rex.lua         Lua API type stubs

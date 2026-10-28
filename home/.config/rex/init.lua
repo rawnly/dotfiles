@@ -7,7 +7,7 @@ rpm.setup({
 	},
 })
 
-for _, action in ipairs({ "quick-open", "move-pane", "popup", "edit-scrollback" }) do
+for _, action in ipairs({ "quick-open", "popup", "edit-scrollback" }) do
 	require("actions." .. action)
 end
 
