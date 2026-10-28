@@ -1,5 +1,5 @@
 local M = {
-	theme = "nyx",
+	theme = "github_dark_dimmed",
 }
 
 return M

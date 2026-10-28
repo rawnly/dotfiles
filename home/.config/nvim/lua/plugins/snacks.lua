@@ -54,7 +54,7 @@ return {
 		indent = { enabled = true },
 		input = { enabled = true },
 		picker = { enabled = true },
-		notifier = { enabled = false },
+		notifier = { enabled = true },
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		scroll = { enabled = false },
@@ -90,6 +90,18 @@ return {
 				Snacks.picker.colorschemes()
 			end,
 			desc = "Search Themes",
+		},
+		{
+			"<leader>fs",
+			desc = "Search Workspace Symbols",
+			function()
+				Snacks.picker.lsp_workspace_symbols({
+					layout = { preset = "select" },
+					preview = false,
+					matcher = { frecency = false },
+					debounce = 150,
+				})
+			end,
 		},
 		{
 			"<leader>fp",

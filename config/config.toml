@@ -20,6 +20,8 @@ podman = { version = "latest", rename_exe = "podman-remote" }
 rust = { version = "latest", mr_boxington = true }
 sops = "latest"
 usage = "latest"
+vendor = "0.0.5"
+waf = "latest"
 wrangler = "latest"
 
 [dotfiles]

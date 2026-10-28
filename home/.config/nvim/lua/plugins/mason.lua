@@ -42,7 +42,6 @@ return {
 				-- "rustywind",
 				-- "shellcheck",
 				-- "pyright",
-				"jdtls",
 				"ruff",
 				"ty",
 			},

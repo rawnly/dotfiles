@@ -79,6 +79,12 @@ function rex.modes() end
 ---@field args?        table<string, any> Argument types such as `"string?"`, or a JSON Schema
 ---@field repeats?     boolean Run again while the key is held
 
+---@class config.PopupArgs Arguments of the `popup` action (actions/popup.lua); the action's `args` JSON Schema mirrors this
+---@field name?   string    Popup identity together with `cwd`; defaults to `cmd[1]`, else `"shell"`
+---@field cmd?    string[]  Command to run, one element per argv entry; a plain shell when omitted
+---@field bounds? number[]  `[x, y, w, h]` as fractions of the window; defaults to `{ 0.1, 0.1, 0.8, 0.8 }`
+---@field cwd?    string    Working directory; defaults to the focused pane's cwd
+
 ---@param definition rex.ActionDefinition
 function rex.action(definition) end
 

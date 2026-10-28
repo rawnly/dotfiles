@@ -1,17 +1,14 @@
-local home = os.getenv("HOME")
-
-local rpm = dofile(home .. "/Developer/projects/rex-plugin-manager/rex_plugin_manager.lua")
+-- Entry point. Order matters: plugins, then actions, then the keys that bind them.
+local rpm = dofile(os.getenv("HOME") .. "/.local/share/rex/rpm/rex_plugin_manager.lua")
 
 rpm.setup({
 	plugins = {
-		{
-			"rawnly/smart-splits-backend-rex",
-			main = "smart-splits-rex",
-			opts = {},
-		},
+		{ "rawnly/smart-splits-backend-rex", main = "smart-splits-rex", opts = { resize_amount = 3 } },
 	},
 })
 
-require("actions.quick-open")
-require("actions.move-pane")
+for _, action in ipairs({ "quick-open", "popup", "edit-scrollback" }) do
+	require("actions." .. action)
+end
+
 require("keys")
