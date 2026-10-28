@@ -23,6 +23,12 @@ sops = "latest"
 usage = "latest"
 wrangler = "latest"
 
+[history]
+exclude = ["~/.config/nvim/lazy-lock.json"]
+
+[history.encryption]
+recipients = []
+
 [dotfiles]
 "~/.config/fish" = { mode = "track" }
 "~/.config/ghostty" = { mode = "track" }
@@ -32,6 +38,7 @@ wrangler = "latest"
 "~/.config/rex" = { mode = "track" }
 "~/.config/sesh" = { mode = "track" }
 "~/.config/tmux/tmux.conf" = { mode = "track" }
+"~/.gitconfig" = { mode = "track", variants = [{ machine = true }] }
 "~/.gitignore_global" = { mode = "track" }
 
 [settings]
@@ -170,9 +177,6 @@ login_shell = "/opt/homebrew/bin/fish"
 [tasks.bootstrap]
 description = "install missing packages"
 run = ["mise run install:tailscale"]
-
-[history]
-exclude = ["~/.config/nvim/lazy-lock.json"]
 
 [env]
 PI_TELEMETRY = "0"
