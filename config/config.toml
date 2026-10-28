@@ -1,5 +1,6 @@
-wrappers = { cargo = { command = "mbx", env = { MBX_CARGO_SHIM_MODE = "1" } } }
 #:tombi schema.strict = false
+
+wrappers = { cargo = { command = "mbx", env = { MBX_CARGO_SHIM_MODE = "1" } } }
 
 [tools]
 age = "latest"
@@ -20,8 +21,6 @@ podman = { version = "latest", rename_exe = "podman-remote" }
 rust = { version = "latest", mr_boxington = true }
 sops = "latest"
 usage = "latest"
-vendor = "0.0.5"
-waf = "latest"
 wrangler = "latest"
 
 [dotfiles]
@@ -37,7 +36,6 @@ wrangler = "latest"
 
 [settings]
 experimental = true
-auto_update = true
 minimum_release_age = "7d"
 
 [settings.github]
