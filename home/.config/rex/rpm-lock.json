@@ -1,0 +1,8 @@
+{
+  "format": 1,
+  "plugins": {
+    "rawnly/smart-splits-backend-rex": {
+      "commit": "d15615e5c2deb237535884a921b0401dc2603533"
+    }
+  }
+}
