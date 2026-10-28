@@ -39,7 +39,7 @@ return {
 		cmd = { "GistCreate", "GistsList", "GistCreateFromFile" },
 		---@type Gist.Config
 		opts = {
-			platform = "termbin",
+			platform = "github",
 		},
 	},
 	{
