@@ -9,6 +9,8 @@
 --
 -- Action names, their arguments, and most API results vary by client and server version, so they are typed
 -- loosely. Results this configuration reads have their own shapes; run `rex api describe METHOD` for the rest.
+-- Server shapes checked against `rex api list --json`, server 0.0.1793140103-gf62f00.
+-- Nullable response fields are optional in Lua because JSON null becomes nil.
 
 ---@class Rex
 _G.rex = {}
@@ -45,8 +47,8 @@ function rex.bind(key, action, args) end
 ---@field args?  table<string, any>
 ---@field source string                Where it was bound, such as `keys.lua:3`
 
---- Removes the bindings of a key, limited to those targeting `target` when given, and returns how many of this
---- file's bindings it removed. `rex.unbind("mode/key")` also blocks the key in that mode.
+--- Removes a key's bindings from this file and the client's defaults, limited to `target` when given.
+--- Returns how many of this file's bindings it removed. `rex.unbind("mode/key")` also blocks the key in that mode.
 ---@param key     string
 ---@param target? string | function
 ---@return integer
@@ -106,7 +108,7 @@ function rex.client.queue(name, args) end
 ---@alias rex.Bounds number[] | { x: number, y: number, w: number, h: number } `[x, y, w, h]` as fractions of the window's width and height
 
 ---@class rex.ViewBlock
----@field block_id      string
+---@field block_id?      string
 ---@field creator_name? string
 ---@field flavor?       string
 ---@field host_id?      string
@@ -114,7 +116,7 @@ function rex.client.queue(name, args) end
 ---@field owner?        string
 
 ---@class rex.ViewSplit
----@field split_id  string
+---@field split_id?  string
 ---@field direction "horizontal" | "vertical" `horizontal` puts `before` on the left, `vertical` puts it on top
 ---@field ratio     number                    The share `before` gets
 ---@field before    rex.ViewLayoutNode
@@ -127,21 +129,21 @@ function rex.client.queue(name, args) end
 ---@field split?    rex.ViewSplit Set on a split
 
 ---@class rex.ViewLayer
----@field layer_id string
+---@field layer_id? string
 ---@field kind     "tiled" | "floating" | string `tiled` fills the window; treat an unknown kind as `floating`
 ---@field bounds   number[]                     `[x, y, w, h]` as fractions of the window
----@field layout   rex.ViewLayoutNode           A layer's layout; `null` when the layer is empty
----@field blocks   rex.ViewBlock[]
+---@field layout?   rex.ViewLayoutNode           A layer's layout; `null` when the layer is empty
+---@field blocks?   rex.ViewBlock[]
 
 ---@class rex.ViewWindow
----@field window_id         string
+---@field window_id?         string
 ---@field label?            string
 ---@field focused_block_id? string
 ---@field zoomed_block_id?  string
----@field layers            rex.ViewLayer[]
+---@field layers?            rex.ViewLayer[]
 
 ---@class rex.SessionView
----@field session_id       string
+---@field session_id?       string
 ---@field revision         integer Structural revision; changes with the layout and focus
 ---@field active_window_id string?
 ---@field label?           string
@@ -151,7 +153,7 @@ function rex.client.queue(name, args) end
 ---@field revision integer The session's revision after the call
 
 ---@class rex.BlockInfo
----@field block_id      string
+---@field block_id?      string
 ---@field label         string
 ---@field placement     "placed" | "detached" | string Treat an unknown value as `detached`
 ---@field window_id?    string
@@ -176,7 +178,7 @@ function rex.client.queue(name, args) end
 ---@field user_id?     string
 
 ---@class rex.ClientInfo
----@field client_id           string
+---@field client_id?           string
 ---@field connected_at        string
 ---@field connection_lost_at? string
 ---@field connection_state?   string
@@ -192,8 +194,8 @@ function rex.client.queue(name, args) end
 ---@field session_id?   string
 
 ---@class rex.NewWindowResult: rex.Revision
----@field window_id string
----@field block_ids string[]
+---@field window_id? string
+---@field block_ids? string[]
 
 ---@class rex.NewSplitArgs
 ---@field direction   "horizontal" | "vertical" `horizontal` is side by side, `vertical` is one above the other
@@ -217,7 +219,7 @@ function rex.client.queue(name, args) end
 ---@field session_id? string
 
 ---@class rex.NewBlockResult: rex.Revision
----@field block_id string
+---@field block_id? string
 
 ---@class rex.NewLayerArgs
 ---@field bounds      rex.Bounds Where the floating layer sits; it must fit inside the window
@@ -227,8 +229,8 @@ function rex.client.queue(name, args) end
 ---@field session_id? string
 
 ---@class rex.NewLayerResult: rex.Revision
----@field layer_id  string
----@field block_ids string[]
+---@field layer_id?  string
+---@field block_ids? string[]
 
 ---@class rex.CloseWindowArgs
 ---@field window_id?  string Defaults to the active window
@@ -251,7 +253,7 @@ function rex.client.queue(name, args) end
 ---@field session_id?     string
 
 ---@class rex.MoveBlockResult: rex.Revision
----@field created_split_id  string
+---@field created_split_id?  string
 ---@field removed_split_id? string
 
 ---@class rex.SwapBlocksArgs
@@ -265,7 +267,7 @@ function rex.client.queue(name, args) end
 ---@field session_id? string
 
 ---@class rex.FloatBlockResult: rex.Revision
----@field layer_id string
+---@field layer_id? string
 
 ---@class rex.ZoomBlockArgs
 ---@field block_id?   string  The block to zoom; defaults to the focused block of `window_id` or the active window
@@ -274,7 +276,7 @@ function rex.client.queue(name, args) end
 ---@field session_id? string
 
 ---@class rex.ZoomBlockResult: rex.Revision
----@field block_id string
+---@field block_id? string
 ---@field zoomed   boolean
 
 ---@class rex.ResizePaneArgs
@@ -339,8 +341,8 @@ function rex.client.queue(name, args) end
 
 ---@class rex.Session
 ---@field view                  fun(args?: rex.SessionIdArgs): rex.SessionView?, string?
----@field list_blocks           fun(args?: rex.SessionIdArgs): { blocks: rex.BlockInfo[] }?, string?
----@field list_clients          fun(args?: rex.SessionIdArgs): { clients: rex.ClientInfo[] }?, string?
+---@field list_blocks           fun(args?: rex.SessionIdArgs): { blocks?: rex.BlockInfo[] }?, string?
+---@field list_clients          fun(args?: rex.SessionIdArgs): { clients?: rex.ClientInfo[] }?, string?
 ---@field describe_block        fun(args: rex.BlockArgs): rex.DescribeBlockResult?, string?
 ---@field new_window            fun(args: rex.NewWindowArgs): rex.NewWindowResult?, string?
 ---@field new_split             fun(args: rex.NewSplitArgs): rex.NewSplitResult?, string?
@@ -389,20 +391,27 @@ function rex.call(method, args) end
 ---@field name      string
 ---@field argv0?    string
 ---@field path?     string
+---@field invoked_path? string The executable path before resolving symlinks
+---@field script?   string The script run by an interpreter, when known
 ---@field user?     string
----@field user_id?  integer
+---@field user_id   integer
 ---@field cwd?      string
 
 ---@class rex.TerminalProcess
 ---@field child?      rex.Process
 ---@field foreground? rex.Process
 ---@field ancestors?  rex.Process[]
----@field last_exit?  table
+---@field last_exit?  { exit_code: integer, error?: string }
 ---@field home?       string
 
 rex.block = {}
 
 ---@alias rex.TerminalMethod
+---| "blob_read"      Read a result too large for one reply or event
+---| "clear"          Clear the screen and scrollback, keeping the current line
+---| "clipboard_read" Read text a program copied to the clipboard
+---| "input_mode"     Return how the terminal handles typed input
+---| "modes"          List terminal modes and whether they are enabled
 ---| "format"         Return the screen as text, HTML, or VT sequences
 ---| "process"        Describe the terminal's child and foreground processes
 ---| "pwd"            Return the working directory the terminal last reported
@@ -422,8 +431,8 @@ rex.block = {}
 ---@return table? result
 ---@return string? error
 ---@overload fun(creator: "com.superlogical.terminal", method: "process", args?: { block_id?: string }): rex.TerminalProcess?, string?
----@overload fun(creator: "com.superlogical.terminal", method: "pwd", args?: { block_id?: string }): { pwd?: string }?, string?
----@overload fun(creator: "com.superlogical.terminal", method: "title", args?: { block_id?: string }): { title?: string }?, string?
+---@overload fun(creator: "com.superlogical.terminal", method: "pwd", args?: { block_id?: string }): { pwd?: string, owner?: { pid: integer, name: string } }?, string?
+---@overload fun(creator: "com.superlogical.terminal", method: "title", args?: { block_id?: string }): { title: string, owner?: { pid: integer, name: string } }?, string?
 function rex.block.call(creator, method, args) end
 
 ---@class rex.Layout A layout table built by `rex.layout.*`, accepted by `new_window`, `new_split` and `new_layer`

@@ -1,0 +1,27 @@
+{
+  "id": "bd1568b60",
+  "name": "Bivio isolated build tests",
+  "command": "cd /Users/federicovitale/Developer/RUST/bivio && env CARGO_TARGET_DIR=target/pick-json-check RUSTC=/Users/federicovitale/.cargo/bin/rustc /Users/federicovitale/.cargo/bin/cargo test && env CARGO_TARGET_DIR=target/pick-json-check RUSTC=/Users/federicovitale/.cargo/bin/rustc /Users/federicovitale/.cargo/bin/cargo run -- pick --help",
+  "status": "completed",
+  "outputPath": ".pi/tasks/01a18166-c8ca-71f3-b377-ebdd197a37fc-55382/bd1568b60.output",
+  "cwd": "/Users/federicovitale/.config/rex",
+  "startTime": 1793173679778,
+  "endTime": 1793173710921,
+  "exitCode": 0,
+  "signal": null,
+  "pid": 70454,
+  "bytesWritten": 7854,
+  "isAgent": false,
+  "surviveReload": false,
+  "notified": true,
+  "notifyOnCompletion": true,
+  "triggerOnCompletion": true,
+  "shellPolicy": {
+    "policy": "inherit",
+    "executable": "/opt/homebrew/bin/fish",
+    "argvPrefix": [
+      "-c"
+    ],
+    "dialect": "user-non-posix"
+  }
+}

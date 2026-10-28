@@ -94,10 +94,10 @@ return {
 		opts = {},
 	},
 	{
-		"folke/tokyonight.nvim",
+		"folke/tokyonight.vim",
 		lazy = true,
 		priority = 1000,
-		enabled = true,
+		enabled = false,
 		opts = {
 			style = "night",
 			transparent = true,

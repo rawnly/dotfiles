@@ -2,12 +2,12 @@ set fish_greeting
 
 set -gx EDITOR nvim
 set -gx MCFLY_KEY_SCHEME vim
-set -gx GROQ_API_KEY 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
 set -gx MANPAGER 'nvim +Man!'
 
 set -gx BRACCO_VIM true
 set -gx BRACCO_PREVIEW 'bat --theme luna -p {}'
 
+set -gx OP_BIOMETRIC_UNLOCK_ENABLED true
 set ZELLIJ_AUTO_EXIT true
 set ZELLIJ_CONFIG_DIR "$HOME/.config/zellij"
 set ZELLIJ_AUTO_ATTACH false
@@ -16,7 +16,6 @@ set -gx HOMEBREW_CASK_OPTS "--appdir=$HOME/Applications"
 
 set TMUX_ENABLED false
 set TMUX_DEFAULT_SESSION main
-
 set HERDR_ENABLED false
 
 set -x GOPATH $HOME/.go

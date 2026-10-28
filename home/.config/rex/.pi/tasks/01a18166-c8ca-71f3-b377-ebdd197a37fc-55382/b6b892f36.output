@@ -1,0 +1,405 @@
+ Downloading crates ...
+  Downloaded futures-core v0.3.32
+  Downloaded yoke-derive v0.8.1
+  Downloaded http-body v1.0.1
+  Downloaded zerofrom-derive v0.1.6
+  Downloaded zerofrom v0.1.6
+  Downloaded yoke v0.8.1
+  Downloaded futures-sink v0.3.32
+  Downloaded zerovec-derive v0.11.2
+  Downloaded zeroize v1.8.2
+  Downloaded tinyvec_macros v0.1.1
+  Downloaded pin-utils v0.1.0
+  Downloaded potential_utf v0.1.4
+  Downloaded zmij v1.0.14
+  Downloaded system-configuration-sys v0.6.0
+  Downloaded mime v0.3.17
+  Downloaded idna_adapter v1.2.1
+  Downloaded zerotrie v0.2.3
+  Downloaded dyn-clone v1.0.20
+  Downloaded clap_lex v0.7.7
+  Downloaded lru-slab v0.1.2
+  Downloaded zerovec v0.11.5
+  Downloaded itoa v1.0.17
+  Downloaded anstyle v1.0.13
+  Downloaded anstream v0.6.21
+  Downloaded http-body-util v0.1.3
+  Downloaded futures-task v0.3.32
+  Downloaded dunce v1.0.5
+  Downloaded colorchoice v1.0.4
+  Downloaded zerocopy v0.8.40
+  Downloaded tokio-macros v2.6.0
+  Downloaded thiserror-impl v2.0.17
+  Downloaded strum v0.27.2
+  Downloaded tinystr v0.8.2
+  Downloaded find-msvc-tools v0.1.7
+  Downloaded cmake v0.1.57
+  Downloaded anstyle-parse v0.2.7
+  Downloaded system-configuration v0.7.0
+  Downloaded semver v1.0.27
+  Downloaded rand_chacha v0.9.0
+  Downloaded quote v1.0.43
+  Downloaded futures-channel v0.3.32
+  Downloaded fs_extra v1.3.0
+  Downloaded writeable v0.6.2
+  Downloaded jobserver v0.1.34
+  Downloaded unicode-ident v1.0.22
+  Downloaded strum_macros v0.27.2
+  Downloaded litemap v0.8.1
+  Downloaded ipnet v2.12.0
+  Downloaded hyper-rustls v0.27.7
+  Downloaded clap_derive v4.5.49
+  Downloaded bitflags v2.11.0
+  Downloaded displaydoc v0.2.5
+  Downloaded tokio-rustls v0.26.4
+  Downloaded thiserror v2.0.17
+  Downloaded rustls-pki-types v1.14.0
+  Downloaded rand_core v0.9.5
+  Downloaded quinn-udp v0.5.14
+  Downloaded iana-time-zone v0.1.64
+  Downloaded log v0.4.29
+  Downloaded anyhow v1.0.100
+  Downloaded tinyvec v1.10.0
+  Downloaded proc-macro2 v1.0.105
+  Downloaded icu_properties v2.1.2
+  Downloaded frizbee v0.8.2
+  Downloaded rustls-platform-verifier v0.6.2
+  Downloaded icu_provider v2.1.1
+  Downloaded clap v4.5.54
+  Downloaded openssl-sys v0.9.111
+  Downloaded icu_locale_core v2.1.1
+  Downloaded socket2 v0.6.3
+  Downloaded quinn v0.11.9
+  Downloaded icu_normalizer_data v2.1.1
+  Downloaded rustls-webpki v0.103.9
+  Downloaded http v1.4.0
+  Downloaded memchr v2.7.6
+  Downloaded icu_normalizer v2.1.1
+  Downloaded unicode-segmentation v1.12.0
+  Downloaded bytes v1.11.1
+  Downloaded mio v1.1.1
+  Downloaded icu_collections v2.1.1
+  Downloaded inquire v0.9.1
+  Downloaded cc v1.2.52
+  Downloaded rand v0.9.2
+  Downloaded indexmap v2.13.0
+  Downloaded raw-cpuid v11.6.0
+  Downloaded hyper v1.8.1
+  Downloaded tower-http v0.6.8
+  Downloaded tokio-util v0.7.18
+  Downloaded serde_json v1.0.149
+  Downloaded icu_properties_data v2.1.2
+  Downloaded reqwest v0.13.2
+  Downloaded iri-string v0.7.10
+  Downloaded futures-util v0.3.32
+  Downloaded clap_builder v4.5.54
+  Downloaded h2 v0.4.13
+  Downloaded chrono v0.4.42
+  Downloaded aws-lc-rs v1.16.1
+  Downloaded git2 v0.20.3
+  Downloaded quinn-proto v0.11.13
+  Downloaded syn v2.0.114
+  Downloaded rustls v0.23.37
+  Downloaded rustix v1.1.3
+  Downloaded libssh2-sys v0.3.1
+  Downloaded libc v0.2.180
+  Downloaded tokio v1.50.0
+  Downloaded libz-sys v1.1.23
+  Downloaded encoding_rs v0.8.35
+  Downloaded libgit2-sys v0.18.3+1.9.2
+  Downloaded openssl-src v300.5.4+3.5.4
+  Downloaded aws-lc-sys v0.38.0
+   Compiling libc v0.2.180
+   Compiling proc-macro2 v1.0.105
+   Compiling quote v1.0.43
+   Compiling unicode-ident v1.0.22
+   Compiling shlex v1.3.0
+   Compiling find-msvc-tools v0.1.7
+   Compiling smallvec v1.15.1
+   Compiling cfg-if v1.0.4
+   Compiling log v0.4.29
+   Compiling stable_deref_trait v1.2.1
+   Compiling parking_lot_core v0.9.12
+   Compiling scopeguard v1.2.0
+   Compiling pkg-config v0.3.32
+   Compiling pin-project-lite v0.2.17
+   Compiling bytes v1.11.1
+   Compiling bitflags v2.11.0
+   Compiling lock_api v0.4.14
+   Compiling core-foundation-sys v0.8.7
+   Compiling dunce v1.0.5
+   Compiling fs_extra v1.3.0
+   Compiling futures-core v0.3.32
+   Compiling vcpkg v0.2.15
+   Compiling itoa v1.0.17
+   Compiling once_cell v1.21.3
+   Compiling aws-lc-rs v1.16.1
+   Compiling writeable v0.6.2
+   Compiling litemap v0.8.1
+   Compiling icu_properties_data v2.1.2
+   Compiling slab v0.4.12
+   Compiling zeroize v1.8.2
+   Compiling icu_normalizer_data v2.1.1
+   Compiling tracing-core v0.1.36
+   Compiling http v1.4.0
+   Compiling rustls-pki-types v1.14.0
+   Compiling serde_core v1.0.228
+   Compiling untrusted v0.9.0
+   Compiling equivalent v1.0.2
+   Compiling hashbrown v0.16.1
+   Compiling httparse v1.10.1
+   Compiling futures-task v0.3.32
+   Compiling percent-encoding v2.3.2
+   Compiling system-configuration-sys v0.6.0
+   Compiling futures-sink v0.3.32
+   Compiling rustls v0.23.37
+   Compiling tracing v0.1.44
+   Compiling futures-util v0.3.32
+   Compiling atomic-waker v1.1.2
+   Compiling fnv v1.0.7
+   Compiling http-body v1.0.1
+   Compiling indexmap v2.13.0
+   Compiling subtle v2.6.1
+   Compiling jobserver v0.1.34
+   Compiling errno v0.3.14
+   Compiling mio v1.1.1
+   Compiling socket2 v0.6.3
+   Compiling heck v0.5.0
+   Compiling unicode-segmentation v1.12.0
+   Compiling signal-hook v0.3.18
+   Compiling tower-service v0.3.3
+   Compiling signal-hook-registry v1.4.8
+   Compiling try-lock v0.2.5
+   Compiling cc v1.2.52
+   Compiling parking_lot v0.12.5
+   Compiling want v0.3.1
+   Compiling syn v2.0.114
+   Compiling convert_case v0.10.0
+   Compiling core-foundation v0.9.4
+   Compiling futures-channel v0.3.32
+   Compiling utf8_iter v1.0.4
+   Compiling pin-utils v0.1.0
+   Compiling autocfg v1.5.0
+   Compiling serde v1.0.228
+   Compiling zmij v1.0.14
+   Compiling utf8parse v0.2.2
+   Compiling rustix v1.1.3
+   Compiling security-framework-sys v2.17.0
+   Compiling core-foundation v0.10.1
+   Compiling anstyle-parse v0.2.7
+   Compiling system-configuration v0.7.0
+   Compiling form_urlencoded v1.2.2
+   Compiling sync_wrapper v1.0.2
+   Compiling anstyle v1.0.13
+   Compiling num-traits v0.2.19
+   Compiling litrs v1.0.0
+   Compiling serde_json v1.0.149
+   Compiling cmake v0.1.57
+   Compiling openssl-src v300.5.4+3.5.4
+   Compiling colorchoice v1.0.4
+   Compiling is_terminal_polyfill v1.70.2
+   Compiling base64 v0.22.1
+   Compiling anstyle-query v1.1.5
+   Compiling ipnet v2.12.0
+   Compiling tower-layer v0.3.3
+   Compiling security-framework v3.7.0
+   Compiling signal-hook-mio v0.2.5
+   Compiling anstream v0.6.21
+   Compiling document-features v0.2.12
+   Compiling thread_local v1.1.9
+   Compiling clap_lex v0.7.7
+   Compiling strsim v0.11.1
+   Compiling option-ext v0.2.0
+   Compiling aws-lc-sys v0.38.0
+   Compiling libz-sys v1.1.23
+   Compiling openssl-sys v0.9.111
+   Compiling libssh2-sys v0.3.1
+   Compiling libgit2-sys v0.18.3+1.9.2
+   Compiling anyhow v1.0.100
+   Compiling memchr v2.7.6
+   Compiling either v1.15.0
+   Compiling thiserror v2.0.17
+   Compiling iri-string v0.7.10
+   Compiling itertools v0.14.0
+   Compiling clap_builder v4.5.54
+   Compiling dirs-sys v0.4.1
+   Compiling fuzzy-matcher v0.3.7
+   Compiling http-body-util v0.1.3
+   Compiling iana-time-zone v0.1.64
+   Compiling synstructure v0.13.2
+   Compiling raw-cpuid v11.6.0
+   Compiling encoding_rs v0.8.35
+   Compiling unicode-width v0.2.2
+   Compiling mime v0.3.17
+   Compiling dyn-clone v1.0.20
+   Compiling dirs v5.0.1
+   Compiling indoc v2.0.7
+   Compiling semver v1.0.27
+   Compiling zerofrom-derive v0.1.6
+   Compiling yoke-derive v0.8.1
+   Compiling zerovec-derive v0.11.2
+   Compiling displaydoc v0.2.5
+   Compiling tokio-macros v2.6.0
+   Compiling derive_more-impl v2.1.1
+   Compiling serde_derive v1.0.228
+   Compiling clap_derive v4.5.49
+   Compiling thiserror-impl v2.0.17
+   Compiling strum_macros v0.27.2
+   Compiling tokio v1.50.0
+   Compiling derive_more v2.1.1
+   Compiling frizbee v0.8.2
+   Compiling strum_macros v0.28.0
+   Compiling zerofrom v0.1.6
+   Compiling crossterm v0.29.0
+   Compiling clap v4.5.54
+   Compiling yoke v0.8.1
+   Compiling strum v0.27.2
+   Compiling inquire v0.9.1
+   Compiling zerovec v0.11.5
+   Compiling zerotrie v0.2.3
+   Compiling chrono v0.4.42
+   Compiling tinystr v0.8.2
+   Compiling potential_utf v0.1.4
+   Compiling icu_collections v2.1.1
+   Compiling icu_locale_core v2.1.1
+   Compiling icu_provider v2.1.1
+   Compiling icu_normalizer v2.1.1
+   Compiling icu_properties v2.1.2
+   Compiling tokio-util v0.7.18
+   Compiling tower v0.5.3
+   Compiling h2 v0.4.13
+   Compiling tower-http v0.6.8
+   Compiling idna_adapter v1.2.1
+   Compiling idna v1.1.0
+   Compiling url v2.5.8
+   Compiling hyper v1.8.1
+   Compiling hyper-util v0.1.20
+   Compiling rustls-webpki v0.103.9
+   Compiling tokio-rustls v0.26.4
+   Compiling rustls-platform-verifier v0.6.2
+   Compiling hyper-rustls v0.27.7
+   Compiling reqwest v0.13.2
+   Compiling git2 v0.20.3
+   Compiling bivio v0.2.0 (/Users/federicovitale/Developer/RUST/bivio)
+error[E0514]: found crate `clap` compiled by an incompatible version of rustc
+ --> src/cli/mod.rs:2:5
+  |
+2 | use clap::{Parser, Subcommand};
+  |     ^^^^
+  |
+  = note: the following crate versions were found:
+          crate `clap` compiled by rustc 1.94.0 (4a4ef493e 2026-03-02): /Users/federicovitale/Developer/RUST/bivio/target/debug/deps/libclap-1f6c17b315ea2190.rlib
+  = help: please recompile that crate using this compiler (rustc 1.99.1 (58cf8f9c3 2026-10-13)) (consider running `cargo clean` first)
+
+error[E0514]: found crate `strum` compiled by an incompatible version of rustc
+ --> src/cli/mod.rs:4:5
+  |
+4 | use strum::EnumIter;
+  |     ^^^^^
+  |
+  = note: the following crate versions were found:
+          crate `strum` compiled by rustc 1.94.0 (4a4ef493e 2026-03-02): /Users/federicovitale/Developer/RUST/bivio/target/debug/deps/libstrum-7733b0c78c50786f.rlib
+  = help: please recompile that crate using this compiler (rustc 1.99.1 (58cf8f9c3 2026-10-13)) (consider running `cargo clean` first)
+
+error[E0514]: found crate `anyhow` compiled by an incompatible version of rustc
+ --> src/cli/commands/add.rs:2:5
+  |
+2 | use anyhow::Result;
+  |     ^^^^^^
+  |
+  = note: the following crate versions were found:
+          crate `anyhow` compiled by rustc 1.94.0 (4a4ef493e 2026-03-02): /Users/federicovitale/Developer/RUST/bivio/target/debug/deps/libanyhow-563709ab610d8e6f.rlib
+  = help: please recompile that crate using this compiler (rustc 1.99.1 (58cf8f9c3 2026-10-13)) (consider running `cargo clean` first)
+
+error[E0514]: found crate `inquire` compiled by an incompatible version of rustc
+ --> src/cli/commands/pick.rs:8:5
+  |
+8 | use inquire::{
+  |     ^^^^^^^
+  |
+  = note: the following crate versions were found:
+          crate `inquire` compiled by rustc 1.94.0 (4a4ef493e 2026-03-02): /Users/federicovitale/Developer/RUST/bivio/target/debug/deps/libinquire-0a240bc41c150787.rlib
+  = help: please recompile that crate using this compiler (rustc 1.99.1 (58cf8f9c3 2026-10-13)) (consider running `cargo clean` first)
+
+error[E0514]: found crate `serde` compiled by an incompatible version of rustc
+  --> src/cli/commands/pick.rs:12:5
+   |
+12 | use serde::Serialize;
+   |     ^^^^^
+   |
+   = note: the following crate versions were found:
+           crate `serde` compiled by rustc 1.94.0 (4a4ef493e 2026-03-02): /Users/federicovitale/Developer/RUST/bivio/target/debug/deps/libserde-a26b66d90c306a90.rlib
+   = help: please recompile that crate using this compiler (rustc 1.99.1 (58cf8f9c3 2026-10-13)) (consider running `cargo clean` first)
+
+error[E0514]: found crate `serde_json` compiled by an incompatible version of rustc
+   --> src/cli/commands/pick.rs:179:9
+    |
+179 |     use serde_json::{json, Value};
+    |         ^^^^^^^^^^
+    |
+    = note: the following crate versions were found:
+            crate `serde_json` compiled by rustc 1.94.0 (4a4ef493e 2026-03-02): /Users/federicovitale/Developer/RUST/bivio/target/debug/deps/libserde_json-6e0dbe66f9bb20e6.rlib
+    = help: please recompile that crate using this compiler (rustc 1.99.1 (58cf8f9c3 2026-10-13)) (consider running `cargo clean` first)
+
+error[E0514]: found crate `git2` compiled by an incompatible version of rustc
+ --> src/git.rs:2:5
+  |
+2 | use git2::Repository;
+  |     ^^^^
+  |
+  = note: the following crate versions were found:
+          crate `git2` compiled by rustc 1.94.0 (4a4ef493e 2026-03-02): /Users/federicovitale/Developer/RUST/bivio/target/debug/deps/libgit2-2434e1b66a8653d5.rlib
+  = help: please recompile that crate using this compiler (rustc 1.99.1 (58cf8f9c3 2026-10-13)) (consider running `cargo clean` first)
+
+error[E0514]: found crate `chrono` compiled by an incompatible version of rustc
+ --> src/project.rs:1:5
+  |
+1 | use chrono::{DateTime, Utc};
+  |     ^^^^^^
+  |
+  = note: the following crate versions were found:
+          crate `chrono` compiled by rustc 1.94.0 (4a4ef493e 2026-03-02): /Users/federicovitale/Developer/RUST/bivio/target/debug/deps/libchrono-96fdd1527241956e.rlib
+  = help: please recompile that crate using this compiler (rustc 1.99.1 (58cf8f9c3 2026-10-13)) (consider running `cargo clean` first)
+
+error[E0514]: found crate `indoc` compiled by an incompatible version of rustc
+ --> src/shell.rs:2:5
+  |
+2 | use indoc::formatdoc;
+  |     ^^^^^
+  |
+  = note: the following crate versions were found:
+          crate `indoc` compiled by rustc 1.94.0 (4a4ef493e 2026-03-02): /Users/federicovitale/Developer/RUST/bivio/target/debug/deps/libindoc-2c52734635030a16.dylib
+  = help: please recompile that crate using this compiler (rustc 1.99.1 (58cf8f9c3 2026-10-13)) (consider running `cargo clean` first)
+
+error[E0514]: found crate `thiserror` compiled by an incompatible version of rustc
+ --> src/storage.rs:7:5
+  |
+7 | use thiserror::Error;
+  |     ^^^^^^^^^
+  |
+  = note: the following crate versions were found:
+          crate `thiserror` compiled by rustc 1.94.0 (4a4ef493e 2026-03-02): /Users/federicovitale/Developer/RUST/bivio/target/debug/deps/libthiserror-5bfaa32f153c6590.rlib
+  = help: please recompile that crate using this compiler (rustc 1.99.1 (58cf8f9c3 2026-10-13)) (consider running `cargo clean` first)
+
+error[E0514]: found crate `semver` compiled by an incompatible version of rustc
+ --> src/version_check/mod.rs:2:5
+  |
+2 | use semver::Version;
+  |     ^^^^^^
+  |
+  = note: the following crate versions were found:
+          crate `semver` compiled by rustc 1.94.0 (4a4ef493e 2026-03-02): /Users/federicovitale/Developer/RUST/bivio/target/debug/deps/libsemver-bc5e9985b7ee2d04.rlib
+  = help: please recompile that crate using this compiler (rustc 1.99.1 (58cf8f9c3 2026-10-13)) (consider running `cargo clean` first)
+
+error[E0514]: found crate `reqwest` compiled by an incompatible version of rustc
+ --> src/version_check/github_api.rs:2:5
+  |
+2 | use reqwest::{header::HeaderValue, Url};
+  |     ^^^^^^^
+  |
+  = note: the following crate versions were found:
+          crate `reqwest` compiled by rustc 1.94.0 (4a4ef493e 2026-03-02): /Users/federicovitale/Developer/RUST/bivio/target/debug/deps/libreqwest-adcc10c1a0d06057.rlib
+  = help: please recompile that crate using this compiler (rustc 1.99.1 (58cf8f9c3 2026-10-13)) (consider running `cargo clean` first)
+
+For more information about this error, try `rustc --explain E0514`.
+error: could not compile `bivio` (bin "bvo" test) due to 12 previous errors

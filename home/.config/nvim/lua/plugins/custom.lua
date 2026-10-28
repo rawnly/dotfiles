@@ -25,6 +25,7 @@ return {
 	{
 		"rawnly/gh-actions-version.nvim",
 		dev = true,
+		enabled = vim.env.PROFILE == "work",
 		ft = "yaml",
 		cmd = "GhActionsVersion",
 		opts = {
@@ -43,7 +44,7 @@ return {
 	},
 	{
 		"rawnly/nyx.nvim",
-		enabled = false,
+		enabled = true,
 		dev = true,
 		lazy = false,
 		priority = 1000,

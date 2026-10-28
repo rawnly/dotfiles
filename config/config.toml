@@ -5,6 +5,7 @@ wrappers = { cargo = { command = "mbx", env = { MBX_CARGO_SHIM_MODE = "1" } } }
 age = "latest"
 aube = "latest"
 awscli = { version = "latest", symlink_bins = "true" }
+bun = "1.4.3"
 gh = "latest"
 "github:bjarneo/ku" = "latest"
 "github:can1357/oh-my-pi" = "latest"
@@ -12,9 +13,11 @@ go = "1.27"
 jwt = "6.2.0"
 k9s = "latest"
 kubectl = "latest"
+mr-boxington = { version = "latest", workflow = "release.yml@refs/heads/main" }
 node = "24.12.0"
 "npm:@earendil-works/pi-coding-agent" = "1.4.0"
 podman = { version = "latest", rename_exe = "podman-remote" }
+rust = { version = "latest", mr_boxington = true }
 sops = "latest"
 usage = "latest"
 vendor = "0.0.5"
