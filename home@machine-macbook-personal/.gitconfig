@@ -31,27 +31,7 @@
   	line-numbers = true
 
 [alias]
-	dotfiles = !git --git-dir=$HOME/.cfg/ --work-tree=$HOME
-	df = !git --git-dir=$HOME/.cfg/ --work-tree=$HOME
-	lazy = !lazygit
-	append = town append
-	compress = town compress
-	contribute = town contribute
-	diff-parent = town diff-parent
-	hack = town hack
-	kill = town kill
-	observe = town observe
-	park = town park
-	prepend = town prepend
-	propose = town propose
-	rename-branch = town rename-branch
-	repo = town repo
-	set-parent = town set-parent
-	ship = town ship
-	sync = town sync
-	wt = !worktree-manager
-	wtls = !worktree-manager list
-	wtrm = !worktree-manager remove
+  stack = !gh stack
 
 [gpg]
 	format = ssh
@@ -61,7 +41,5 @@
 [url "ssh://git@github.com/"]
     insteadOf = https://github.com/
 
-[include]
-  path = "~/.config/delta/themes/nyx_darker.gitconfig"
-[init]
-	defaultBranch = main
+[rere]
+	enabled = true
