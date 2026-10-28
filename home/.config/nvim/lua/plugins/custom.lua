@@ -44,7 +44,7 @@ return {
 	},
 	{
 		"rawnly/nyx.nvim",
-		enabled = false,
+		enabled = true,
 		dev = true,
 		lazy = false,
 		priority = 1000,

@@ -1,0 +1,237 @@
+   Compiling libc v0.2.180
+   Compiling proc-macro2 v1.0.105
+   Compiling unicode-ident v1.0.22
+   Compiling quote v1.0.43
+   Compiling find-msvc-tools v0.1.7
+   Compiling shlex v1.3.0
+   Compiling smallvec v1.15.1
+   Compiling cfg-if v1.0.4
+   Compiling log v0.4.29
+   Compiling stable_deref_trait v1.2.1
+   Compiling parking_lot_core v0.9.12
+   Compiling scopeguard v1.2.0
+   Compiling bitflags v2.11.0
+   Compiling pkg-config v0.3.32
+   Compiling lock_api v0.4.14
+   Compiling bytes v1.11.1
+   Compiling pin-project-lite v0.2.17
+   Compiling futures-core v0.3.32
+   Compiling fs_extra v1.3.0
+   Compiling core-foundation-sys v0.8.7
+   Compiling dunce v1.0.5
+   Compiling vcpkg v0.2.15
+   Compiling itoa v1.0.17
+   Compiling once_cell v1.21.3
+   Compiling aws-lc-rs v1.16.1
+   Compiling litemap v0.8.1
+   Compiling writeable v0.6.2
+   Compiling icu_properties_data v2.1.2
+   Compiling slab v0.4.12
+   Compiling zeroize v1.8.2
+   Compiling icu_normalizer_data v2.1.1
+   Compiling tracing-core v0.1.36
+   Compiling rustls-pki-types v1.14.0
+   Compiling futures-sink v0.3.32
+   Compiling hashbrown v0.16.1
+   Compiling system-configuration-sys v0.6.0
+   Compiling http v1.4.0
+   Compiling futures-task v0.3.32
+   Compiling untrusted v0.9.0
+   Compiling serde_core v1.0.228
+   Compiling equivalent v1.0.2
+   Compiling rustls v0.23.37
+   Compiling httparse v1.10.1
+   Compiling percent-encoding v2.3.2
+   Compiling tracing v0.1.44
+   Compiling futures-util v0.3.32
+   Compiling unicode-segmentation v1.12.0
+   Compiling indexmap v2.13.0
+   Compiling atomic-waker v1.1.2
+   Compiling fnv v1.0.7
+   Compiling signal-hook v0.3.18
+   Compiling try-lock v0.2.5
+   Compiling tower-service v0.3.3
+   Compiling heck v0.5.0
+   Compiling subtle v2.6.1
+   Compiling jobserver v0.1.34
+   Compiling errno v0.3.14
+   Compiling mio v1.1.1
+   Compiling signal-hook-registry v1.4.8
+   Compiling socket2 v0.6.3
+   Compiling cc v1.2.52
+   Compiling parking_lot v0.12.5
+   Compiling http-body v1.0.1
+   Compiling syn v2.0.114
+   Compiling convert_case v0.10.0
+   Compiling want v0.3.1
+   Compiling core-foundation v0.9.4
+   Compiling futures-channel v0.3.32
+   Compiling utf8parse v0.2.2
+   Compiling autocfg v1.5.0
+   Compiling pin-utils v0.1.0
+   Compiling utf8_iter v1.0.4
+   Compiling rustix v1.1.3
+   Compiling serde v1.0.228
+   Compiling zmij v1.0.14
+   Compiling anstyle-parse v0.2.7
+   Compiling security-framework-sys v2.17.0
+   Compiling system-configuration v0.7.0
+   Compiling core-foundation v0.10.1
+   Compiling form_urlencoded v1.2.2
+   Compiling sync_wrapper v1.0.2
+   Compiling litrs v1.0.0
+   Compiling num-traits v0.2.19
+   Compiling cmake v0.1.57
+   Compiling openssl-src v300.5.4+3.5.4
+   Compiling serde_json v1.0.149
+   Compiling anstyle-query v1.1.5
+   Compiling is_terminal_polyfill v1.70.2
+   Compiling tower-layer v0.3.3
+   Compiling ipnet v2.12.0
+   Compiling colorchoice v1.0.4
+   Compiling anstyle v1.0.13
+   Compiling base64 v0.22.1
+   Compiling document-features v0.2.12
+   Compiling security-framework v3.7.0
+   Compiling signal-hook-mio v0.2.5
+   Compiling anstream v0.6.21
+   Compiling thread_local v1.1.9
+   Compiling iri-string v0.7.10
+   Compiling aws-lc-sys v0.38.0
+   Compiling openssl-sys v0.9.111
+   Compiling libz-sys v1.1.23
+   Compiling libssh2-sys v0.3.1
+   Compiling libgit2-sys v0.18.3+1.9.2
+   Compiling strsim v0.11.1
+   Compiling anyhow v1.0.100
+   Compiling thiserror v2.0.17
+   Compiling either v1.15.0
+   Compiling clap_lex v0.7.7
+   Compiling memchr v2.7.6
+   Compiling option-ext v0.2.0
+   Compiling itertools v0.14.0
+   Compiling clap_builder v4.5.54
+   Compiling dirs-sys v0.4.1
+   Compiling fuzzy-matcher v0.3.7
+   Compiling http-body-util v0.1.3
+   Compiling iana-time-zone v0.1.64
+   Compiling raw-cpuid v11.6.0
+   Compiling encoding_rs v0.8.35
+   Compiling unicode-width v0.2.2
+   Compiling dyn-clone v1.0.20
+   Compiling mime v0.3.17
+   Compiling synstructure v0.13.2
+   Compiling dirs v5.0.1
+   Compiling semver v1.0.27
+   Compiling indoc v2.0.7
+   Compiling zerofrom-derive v0.1.6
+   Compiling yoke-derive v0.8.1
+   Compiling zerovec-derive v0.11.2
+   Compiling displaydoc v0.2.5
+   Compiling tokio-macros v2.6.0
+   Compiling derive_more-impl v2.1.1
+   Compiling serde_derive v1.0.228
+   Compiling thiserror-impl v2.0.17
+   Compiling strum_macros v0.27.2
+   Compiling clap_derive v4.5.49
+   Compiling frizbee v0.8.2
+   Compiling tokio v1.50.0
+   Compiling derive_more v2.1.1
+   Compiling strum_macros v0.28.0
+   Compiling zerofrom v0.1.6
+   Compiling crossterm v0.29.0
+   Compiling strum v0.27.2
+   Compiling yoke v0.8.1
+   Compiling clap v4.5.54
+   Compiling inquire v0.9.1
+   Compiling zerovec v0.11.5
+   Compiling zerotrie v0.2.3
+   Compiling chrono v0.4.42
+   Compiling tinystr v0.8.2
+   Compiling potential_utf v0.1.4
+   Compiling icu_collections v2.1.1
+   Compiling icu_locale_core v2.1.1
+   Compiling icu_provider v2.1.1
+   Compiling icu_normalizer v2.1.1
+   Compiling icu_properties v2.1.2
+   Compiling tokio-util v0.7.18
+   Compiling tower v0.5.3
+   Compiling idna_adapter v1.2.1
+   Compiling tower-http v0.6.8
+   Compiling h2 v0.4.13
+   Compiling idna v1.1.0
+   Compiling url v2.5.8
+   Compiling hyper v1.8.1
+   Compiling hyper-util v0.1.20
+   Compiling rustls-webpki v0.103.9
+   Compiling tokio-rustls v0.26.4
+   Compiling rustls-platform-verifier v0.6.2
+   Compiling hyper-rustls v0.27.7
+   Compiling reqwest v0.13.2
+   Compiling git2 v0.20.3
+   Compiling bivio v0.2.0 (/Users/federicovitale/Developer/RUST/bivio)
+warning: method `to_list_item` is never used
+  --> src/project.rs:56:12
+   |
+29 | impl Project {
+   | ------------ method in this implementation
+...
+56 |     pub fn to_list_item(&self) -> String {
+   |            ^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `bivio` (bin "bvo" test) generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 29.19s
+     Running unittests src/main.rs (target/pick-json-check/debug/deps/bvo-8e15b2022a4a1cbb)
+
+running 18 tests
+test config::tests::test_default_config ... ok
+test config::tests::test_config_set ... ok
+test config::tests::test_shell_parse ... ok
+test config::tests::test_shell_display ... ok
+test project::tests::test_has_any_tag ... ok
+test project::tests::test_add_tag ... ok
+test config::tests::test_config_get ... ok
+test project::tests::test_project_creation ... ok
+test project::tests::test_remove_tag ... ok
+test config::tests::test_config_set_invalid_key ... ok
+test project::tests::test_with_tags ... ok
+test cli::commands::pick::tests::skipped_worktree_uses_project_root ... ok
+test cli::commands::pick::tests::project_output_preserves_name_and_path ... ok
+test shell::tests::test_bash_hook ... ok
+test cli::commands::pick::tests::worktree_output_keeps_project_identity ... ok
+test shell::tests::test_detect_shell ... ok
+test shell::tests::test_fish_hook ... ok
+test shell::tests::test_zsh_hook ... ok
+
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Compiling bivio v0.2.0 (/Users/federicovitale/Developer/RUST/bivio)
+warning: method `to_list_item` is never used
+  --> src/project.rs:56:12
+   |
+29 | impl Project {
+   | ------------ method in this implementation
+...
+56 |     pub fn to_list_item(&self) -> String {
+   |            ^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `bivio` (bin "bvo") generated 1 warning
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.16s
+     Running `target/pick-json-check/debug/bvo pick --help`
+Interactive picker with fuzzy search
+
+Usage: bvo pick [OPTIONS] [QUERY]
+
+Arguments:
+  [QUERY]  Search project
+
+Options:
+  -t, --tags <TAGS>  
+      --show-broken  
+      --json         Print the selected project and worktree as JSON
+  -d, --debug        
+  -h, --help         Print help

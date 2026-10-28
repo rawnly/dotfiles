@@ -21,6 +21,33 @@ local function pane_cwd(ctx)
 	return (proc and proc.foreground and proc.foreground.cwd) or os.getenv("HOME")
 end
 
+rex.action({
+	name = "bivio",
+	title = "Open Bivio",
+	run = function(ctx)
+		local result, err = rex.session.new_layer({
+			bounds = { 0.1, 0.1, 0.8, 0.8 },
+			focus = true,
+			layout = rex.layout.block({
+				flavor = TERM .. ".shell",
+				options = {
+					cwd = pane_cwd(ctx),
+					command = {
+						"/bin/bash",
+						os.getenv("HOME") .. "/.config/rex/actions/bivio-session.sh",
+						ctx.client_id or "",
+					},
+					exit = { on_completion = true, quick_exit_threshold_ms = 0 },
+				},
+			}),
+		})
+		if err then
+			error(err, 0)
+		end
+		return result
+	end,
+})
+
 --- Spawn `cmd` in a new split beside the focused block.
 rex.action({
 	name = "quick_open",

@@ -7,6 +7,7 @@ set -gx MANPAGER 'nvim +Man!'
 set -gx BRACCO_VIM true
 set -gx BRACCO_PREVIEW 'bat --theme luna -p {}'
 
+set -gx OP_BIOMETRIC_UNLOCK_ENABLED true
 set ZELLIJ_AUTO_EXIT true
 set ZELLIJ_CONFIG_DIR "$HOME/.config/zellij"
 set ZELLIJ_AUTO_ATTACH false

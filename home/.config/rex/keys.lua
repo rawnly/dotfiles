@@ -1,5 +1,5 @@
 -- neovim integration
-require("smart-splits")
+-- require("smart-splits")
 
 rex.bind("ctrl+a>]", "client.tab.next")
 rex.bind("ctrl+a>[", "client.tab.previous")
@@ -18,6 +18,8 @@ rex.bind("ctrl+a>g", "quick_open", {
 	zoom = false,
 })
 
+rex.bind("ctrl+a>b", "bivio")
+
 rex.bind("cmd+shift+r", "client.config.reload")
 rex.bind("cmd+enter", "pane.split.right")
 rex.bind("alt+enter", "pane.split.auto")
@@ -29,3 +31,8 @@ rex.bind("alt+shift+h", "move_pane", { direction = "left" }) -- move split to th
 rex.bind("alt+shift+j", "move_pane", { direction = "down" }) -- move split down
 rex.bind("alt+shift+k", "move_pane", { direction = "up" }) -- move split up
 rex.bind("alt+shift+l", "move_pane", { direction = "right" }) -- move split to the right
+
+for key, direction in pairs({ h = "left", j = "down", k = "up", l = "right" }) do
+	rex.bind("ctrl+" .. key, "smart_splits_focus", { direction = direction, key = "ctrl+" .. key })
+	rex.bind("alt+" .. key, "smart_splits_resize", { direction = direction, key = "alt+" .. key })
+end
