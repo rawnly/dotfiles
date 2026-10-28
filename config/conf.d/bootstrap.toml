@@ -1,0 +1,13 @@
+[bootstrap.brew.taps]
+"rawnly/tap" = "https://github.com/rawnly/tap"
+"crmne/tap" = "https://github.com/crmne/tap"
+
+[bootstrap.mise_shell_activate]
+fish = "activate"
+
+[bootstrap.user]
+login_shell = "/opt/homebrew/bin/fish"
+
+[tasks.bootstrap]
+description = "install missing packages"
+run = ["mise run install:tailscale"]

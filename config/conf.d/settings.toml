@@ -1,0 +1,24 @@
+[settings]
+experimental = true
+minimum_release_age = "7d"
+
+[settings.github]
+credential_command = 'gh auth token --hostname "$MISE_CREDENTIAL_HOST"'
+gh_cli_tokens = true
+oauth_open_browser = true
+
+[settings.status]
+show_tools = false
+
+[settings.self_update]
+minimum_release_age = "24h"
+auto = true
+
+[settings.write_targets]
+tools = "{{ config_source | dirname }}/tools.toml"
+packages = "{{ config_source | dirname }}/homebrew.toml"
+dotfiles = "{{ config_source | dirname }}/dotfiles.toml"
+
+[env]
+PI_TELEMETRY = "0"
+DO_NOT_TRACK = 1

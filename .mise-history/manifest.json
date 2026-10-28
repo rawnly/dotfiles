@@ -74,7 +74,6 @@
   ],
   "recipients": [],
   "permissions": {
-    "config/config.toml": 384,
     "home/.config/fish": 448,
     "home/.config/fish/fish_variables": 384,
     "home/.config/rex/.pi/tasks/01a18166-c8ca-71f3-b377-ebdd197a37fc-55382/b0e7d8fec.json": 384,
