@@ -35,7 +35,7 @@
 "brew:age" = "latest"
 "brew:htmlq" = "latest"
 # casks
-"brew-cask:raycast" = "latest"
+# "brew-cask:raycast" = "latest"
 "brew-cask:rectangle" = "latest"
 "brew-cask:spotify" = "latest"
 "brew-cask:vivid-app" = "latest"
