@@ -1,0 +1,45 @@
+[user]
+	email = 16429579+rawnly@users.noreply.github.com
+	name = Federico
+	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDCKF96xH82upsaknOufxypAf8RT/EsrZRP/YpREAZqnZaUSs1Shoph22QfWb103Zgm20T0BpnjVKPdQ272bli3C4mSgETfdI4tUZjJA7Q7yk3Ku8f3VGFbFBSIMrGsaLeDMAH9Cha136WpNaO1IsXAe1zKx6kIDgfhbXrsE3BMdgd038BEVdaUjT0yMuMcmi07VhosBYr703aKJAjsll2vgp7RYyaJaHZrs+6dMMAkZEDHoiPzGwkrNgbinZfhgmGePEw5YnNjorT5YWdo1cIVpuzQMmT7gKCnLvDE74ZPy4kQZ9lGnSK9qHfl+vBzrLof7VGUdIVyscEBuihJA2WcAXg63glHnrrYCNopxsKUcB0bFxA9Dqsr3He28wATsVt97IkGd6I+DK1B4nhhQ4dnkju/bBoSCbmvnVJLp/MhgE9CDVLm1UMXdpEDvZC6tLvlde5y6b7zghJkeWDSM32IaXci6OD0tMU6XzjtTJ1r2kQBUp8k6U18u/Y+KV8o/48=
+
+[commit]
+	gpgsign = true
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+
+[core]
+    pager = delta
+    autocrlf = input
+
+[interactive]
+    diffFilter = delta --color-only
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+  	line-numbers = true
+
+[alias]
+  stack = !gh stack
+
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
+
+[rere]
+	enabled = true

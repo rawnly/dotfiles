@@ -20,7 +20,7 @@ rex.bind(prefix("]"), "client.tab.next")
 rex.bind(prefix("["), "client.tab.previous")
 rex.bind(prefix("x"), "client.tab.close")
 rex.bind(prefix(","), "client.tab.rename")
-rex.bind(prefix("R"), "session.rename")
+rex.bind(prefix("shift+r"), "session.rename")
 rex.bind(prefix("r"), "client.tab.rename")
 rex.bind(prefix("="), "pane.balance")
 rex.bind(prefix("ctrl+a"), "pane.send_key", { key = "ctrl+a" }) -- send a literal ctrl+a
@@ -59,7 +59,6 @@ rex.bind(prefix("g"), "client.mode.enter", {
 })
 
 rex.bind("git/g", "popup", { name = "lazygit", cmd = { "lazygit" }, bounds = BOUNDS.full })
-
 rex.bind("git/shift+g", "quick_open", { cmd = { "lazygit" }, ratio = 0.5 }) -- as a split
 
 ---------------------------------------------------------------------------
@@ -71,3 +70,16 @@ rex.bind(prefix("i"), "quick_open", {
 	bounds = BOUNDS.picker,
 })
 rex.bind(prefix("e"), "edit_scrollback")
+
+---------------------------------------------------------------------------
+-- AMBER
+---------------------------------------------------------------------------
+rex.bind(prefix("shift+p"), "client.mode.enter", {
+	name = "amber",
+	once = true,
+	exclusive = true,
+})
+
+rex.bind("amber/i", "amber_install")
+rex.bind("amber/u", "amber_update")
+rex.bind("amber/r", "amber_restore")
