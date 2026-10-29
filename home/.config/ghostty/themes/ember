@@ -1,0 +1,34 @@
+## name: Ember
+## author: Ember Theme
+## upstream: https://github.com/ember-theme/ember/blob/main/palette.json
+
+background = #1c1b19
+foreground = #d8d0c0
+selection-foreground = #d8d0c0
+selection-background = #e08060
+
+# Colors are derived from palette.json (Ember dark variant + accents).
+# black
+palette = 0=#1c1b19
+palette = 8=#988090
+# red
+palette = 1=#e08060
+palette = 9=#b07878
+# green
+palette = 2=#8a9868
+palette = 10=#80a090
+# yellow
+palette = 3=#c8b468
+palette = 11=#c09058
+# blue
+palette = 4=#7890a0
+palette = 12=#80a090
+# purple
+palette = 5=#988090
+palette = 13=#b07878
+# aqua
+palette = 6=#80a090
+palette = 14=#7890a0
+# white
+palette = 7=#d8d0c0
+palette = 15=#d8d0c0

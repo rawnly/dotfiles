@@ -1,2 +1,1 @@
-[tools]
-"aqua:fish-shell/fish-shell" = "latest"
+#:tombi schema.strict = false

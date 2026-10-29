@@ -1,0 +1,26 @@
+#:schema https://github.com/joshmedeski/sesh/raw/main/sesh.schema.json
+
+[[session]]
+name = "main"
+path = "~/"
+
+[[session]]
+name = "Work"
+path = "~/Developer/satispay"
+
+[[session]]
+name = "Developer"
+path = "~/Developer"
+
+[[session]]
+name = "Config"
+path = "~/.config"
+
+[[worktree]]
+repo = "satispay-tech/frt_console_compliance"
+path = "~/Developer/satispay/frt_console_compliance/.bare"
+branch_template = "feature/{number}"
+base_branch = "origin/main"
+worktree_dir = ".."
+fetch = true
+create_command = "mise deps"

@@ -1,0 +1,6 @@
+{
+  "function": {
+    "prefix": "fn",
+    "body": ["function ${1:name}(${2:arg}) {", "\t${3}", "}"]
+  }
+}

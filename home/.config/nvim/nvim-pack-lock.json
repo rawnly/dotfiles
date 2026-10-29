@@ -1,0 +1,8 @@
+{
+  "plugins": {
+    "beacon.nvim": {
+      "rev": "098ff96c33874339d5e61656f3050dbd587d6bd5",
+      "src": "ssh://git@github.com/danilamihailov/beacon.nvim"
+    }
+  }
+}

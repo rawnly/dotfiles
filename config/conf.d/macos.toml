@@ -1,0 +1,54 @@
+[bootstrap.macos.dock]
+autohide = true
+orientation = "left"
+magnification = true
+show_recents = false
+mru_spaces = false
+
+[bootstrap.macos.keyboard]
+fn_state = true
+initial_key_repeat = 10
+key_repeat = 1
+press_and_hold = false
+
+[bootstrap.macos.trackpad]
+tap_to_click = true
+three_finger_drag = true
+
+[bootstrap.macos.finder]
+preferred_view_style = "list"
+show_all_files = false
+show_pathbar = true
+show_status_bar = true
+show_extensions_warning = false
+
+[bootstrap.macos.defaults."NSGlobalDomain"]
+# Enable full keyboard access for all controls
+# (e.g. enable Tab in modal dialogs)
+AppleKeyboardUIMode = 3
+# Disable autocorrection
+NSAutomaticSpellingCorrectionEnabled = false
+# Disable auto-capitalization
+NSAutomaticCapitalizationEnabled = false
+# Default file save location to local disk
+NSDocumentSaveNewDocumentsToCloud = false
+
+[bootstrap.macos.defaults."com.apple.finder"]
+# When performing a search, search the current folder by default
+FXDefaultSearchScope = "SCcf"
+# Keep folders on top when sorting by name
+_FXSortFoldersFirst = true
+
+# Avoid creating .DS_Store files on network or USB volumes
+[bootstrap.macos.defaults."com.apple.desktopservices"]
+DSDontWriteNetworkStores = true
+DSDontWriteUSBStores = true
+
+[bootstrap.macos.defaults."com.apple.dock"]
+# Do not apply delay to dock animation
+autohide-delay = 0
+# Faster dock animation
+autohide-time-modifier = 0.5
+
+[bootstrap.hooks.post-defaults]
+run = ["killall Dock || true", "killall Finder || true", "killall SystemUIServer || true"]

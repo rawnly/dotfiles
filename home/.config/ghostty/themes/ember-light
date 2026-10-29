@@ -1,0 +1,34 @@
+## name: Ember Light
+## author: Ember Theme
+## upstream: https://github.com/ember-theme/ember/blob/main/palette.json
+
+background = #e6dac4
+foreground = #282418
+selection-foreground = #e6dac4
+selection-background = #b84c30
+
+# Colors are derived from palette.json (Ember Light variant + accents_light).
+# black
+palette = 0=#282418
+palette = 8=#706070
+# red
+palette = 1=#b84c30
+palette = 9=#905050
+# green
+palette = 2=#4a6830
+palette = 10=#386858
+# yellow
+palette = 3=#7a6820
+palette = 11=#946030
+# blue
+palette = 4=#3a6080
+palette = 12=#386858
+# purple
+palette = 5=#706070
+palette = 13=#905050
+# aqua
+palette = 6=#386858
+palette = 14=#3a6080
+# white
+palette = 7=#e6dac4
+palette = 15=#e6dac4
