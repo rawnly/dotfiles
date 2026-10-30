@@ -1,3 +1,4 @@
 [dotfiles]
+"~/.config/starship" = { mode = "track", variants = [{ machine = true }] }
 "~/Developer/satispay/.gitconfig" = { mode = "track", variants = [{ machine = true }] }
 #:tombi schema.strict = false
