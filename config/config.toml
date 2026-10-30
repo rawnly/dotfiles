@@ -1,1 +1,3 @@
+[dotfiles]
+"~/Developer/satispay/.gitconfig" = { mode = "track", variants = [{ machine = true }] }
 #:tombi schema.strict = false

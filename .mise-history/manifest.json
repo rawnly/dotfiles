@@ -67,6 +67,19 @@
       "autosave": true,
       "encrypt": false,
       "variants": []
+    },
+    {
+      "path": "home/Developer/satispay/.gitconfig",
+      "autosave": true,
+      "encrypt": false,
+      "variants": [
+        {
+          "os": [],
+          "profile": null,
+          "default": false,
+          "machine": true
+        }
+      ]
     }
   ],
   "exclude": [

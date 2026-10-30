@@ -53,10 +53,9 @@
 	wtls = !worktree-manager list
 	wtrm = !worktree-manager remove
   stack = !gh stack
-
-[includeIf "gitdir:/Users/federico.vitale/Developer/satispay/"]
-	path = /Users/federico.vitale/Developer/satispay/.gitconfig-satispay
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[includeIf "gitdir:~/Developer/satispay/"]
+	path = /Users/federico.vitale/Developer/satispay/.gitconfig
