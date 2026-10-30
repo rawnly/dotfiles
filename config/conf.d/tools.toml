@@ -1,21 +1,36 @@
 [wrappers]
 cargo = { command = "mbx", env = { MBX_CARGO_SHIM_MODE = "1" } }
 
+[settings]
+minimum_release_age_excludes = ["pooh", "bracco", "packslip:github.com/rawnly/*"]
+
+[tool_alias]
+bracco = "packslip:github.com/rawnly/bracco"
+pooh = "packslip:github.com/rawnly/pooh"
+
 [tools]
+"aqua:fish-shell/fish-shell" = { depends = ["aqua:starship/starship", "aqua:cantino/mcfly", "eza", "jq", "fd", "ripgrep", "sd", "zoxide"], version = "latest" }
+"aqua:starship/starship" = "latest"
 aube = "latest"
 awscli = { version = "latest", symlink_bins = "true" }
-bun = "1.4.3"
+bun = "1.4"
+eza = "latest"
 "github:bjarneo/ku" = "latest"
-"github:can1357/oh-my-pi" = "latest"
 go = "1.27"
 jwt = "6.2.0"
 k9s = "latest"
 kubectl = "latest"
 mr-boxington = { version = "latest", workflow = "release.yml@refs/heads/main" }
-node = "24.12.0"
+neovim = { version = "latest", depends = ["tree-sitter", "go", "node"] }
+node = "lts"
 "npm:@earendil-works/pi-coding-agent" = "1.4.0"
+bracco = "latest"
+pooh = "latest"
 podman = { version = "latest", rename_exe = "podman-remote" }
 rust = { version = "latest", mr_boxington = true }
 sops = "latest"
+tree-sitter = "latest"
 usage = "latest"
 wrangler = "latest"
+zoxide = "latest"
+gh = "latest"
