@@ -53,6 +53,7 @@
 	wtls = !worktree-manager list
 	wtrm = !worktree-manager remove
   stack = !gh stack
+	clone-bare = "!f() { cd \"${GIT_PREFIX:-.}\" && n=\"${2:-$(basename \"$1\" .git)}\" && mkdir -p \"$n\" && git clone --bare \"$1\" \"$n/.bare\" && echo \"gitdir: ./.bare\" > \"$n/.git\" && git -C \"$n\" config remote.origin.fetch \"+refs/heads/*:refs/remotes/origin/*\" && git -C \"$n\" fetch origin; }; f"
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 [url "git@github.com:"]

@@ -29,4 +29,4 @@
 "brew-cask:ghostty" = "latest"
 "brew-cask:codex" = "latest"
 "brew-cask:bruno" = "latest"
-"brew-cask:1password" = "latest"
+"brew-cask:1password" = { appdir = "/Applications" }
