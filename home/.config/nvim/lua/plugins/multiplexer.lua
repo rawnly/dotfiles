@@ -7,14 +7,17 @@ return {
 	},
 	{
 		"rawnly/rex.nvim",
+		dir = "~/Developer/nvim-plugins/rawnly/rex-nvim",
 		event = "VeryLazy",
-		dev = true,
+		enabled = vim.env.REX_SERVER ~= nil,
 		opts = {
 			agent_scope = "tab",
 			preferred_agent = {
-				cmd = "pi",
+				cmd = "claude",
 				split = "right",
-				ratio = 50,
+				float = true,
+				submit = true,
+				ratio = 30,
 			},
 		},
 	},
