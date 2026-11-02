@@ -5,8 +5,8 @@ cargo = { command = "mbx", env = { MBX_CARGO_SHIM_MODE = "1" } }
 minimum_release_age_excludes = ["pooh", "bracco", "packslip:github.com/rawnly/*"]
 
 [tool_alias]
-bracco = "packslip:github.com/rawnly/bracco"
-pooh = "packslip:github.com/rawnly/pooh"
+# bracco = "packslip:github.com/rawnly/bracco"
+# pooh = "packslip:github.com/rawnly/pooh"
 
 [tools]
 "aqua:fish-shell/fish-shell" = { depends = ["aqua:starship/starship", "aqua:cantino/mcfly", "eza", "jq", "fd", "ripgrep", "sd", "zoxide"], version = "latest" }
@@ -24,8 +24,8 @@ mr-boxington = { version = "latest", workflow = "release.yml@refs/heads/main" }
 neovim = { version = "latest", depends = ["tree-sitter", "go", "node"] }
 node = "lts"
 "npm:@earendil-works/pi-coding-agent" = "1.4.0"
-bracco = "latest"
-pooh = "latest"
+# bracco = "latest"
+# pooh = "latest"
 podman = { version = "latest", rename_exe = "podman-remote" }
 rust = { version = "latest", mr_boxington = true }
 sops = "latest"

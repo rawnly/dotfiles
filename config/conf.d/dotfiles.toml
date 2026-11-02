@@ -9,6 +9,8 @@
 "~/.config/tmux/tmux.conf" = { mode = "track" }
 "~/.gitconfig" = { mode = "track", variants = [{ machine = true }] }
 "~/.gitignore_global" = { mode = "track" }
+"~/.config/starship" = { mode = "track", variants = [{ machine = true }] }
+"~/Developer/satispay/.gitconfig" = { mode = "track", variants = [{ machine = true }] }
 
 [history]
 exclude = ["~/.config/nvim/lazy-lock.json"]

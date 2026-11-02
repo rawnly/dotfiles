@@ -60,3 +60,8 @@
 	insteadOf = https://github.com/
 [includeIf "gitdir:~/Developer/satispay/"]
 	path = /Users/federico.vitale/Developer/satispay/.gitconfig
+
+[url "git@github-satispay:satispay-tech/"]
+  insteadOf = ssh://git@github.com/satispay-tech/
+  insteadOf = git@github.com:satispay-tech/
+  insteadOf = https://github.com/satispay-tech/

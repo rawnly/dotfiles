@@ -31,7 +31,7 @@ function unmount {
 function dx::dmg::install {
   set -x 
   dmg="$1"
-  dest="${2:/Applications}"
+  dest="${2:-/Applications}"
 
   echo "Mounting dmg..."
   volume=$(mount "$dmg")
@@ -53,7 +53,8 @@ function dx::pkg::install {
     exit 1
   fi
 
-  sudo -S installer -pkg "$1" -target "${2:/Applications}"
+  # installer -target takes a volume, not a folder
+  sudo -S installer -pkg "$1" -target "${2:-/}"
 }
 
 function dx::completed {
