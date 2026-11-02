@@ -96,7 +96,10 @@
     }
   ],
   "exclude": [
-    "~/.config/nvim/lazy-lock.json"
+    "~/.config/nvim/lazy-lock.json",
+    "/Users/federicovitale/.config/fish/conf.d/starship.fish",
+    "/Users/federicovitale/.config/fish/conf.d/zoxide.fish",
+    "/Users/federicovitale/.config/fish/conf.d/mcfly.fish"
   ],
   "recipients": [],
   "permissions": {

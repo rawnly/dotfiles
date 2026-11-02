@@ -1,4 +1,7 @@
 [dotfiles]
 "~/.config/starship" = { mode = "track", variants = [{ machine = true }] }
 "~/Developer/satispay/.gitconfig" = { mode = "track", variants = [{ machine = true }] }
+
+[history]
+exclude = ["/Users/federicovitale/.config/fish/conf.d/starship.fish", "/Users/federicovitale/.config/fish/conf.d/zoxide.fish", "/Users/federicovitale/.config/fish/conf.d/mcfly.fish"]
 #:tombi schema.strict = false
