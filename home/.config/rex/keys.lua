@@ -18,7 +18,8 @@ local BOUNDS = {
 ---------------------------------------------------------------------------
 rex.bind(prefix("]"), "client.tab.next")
 rex.bind(prefix("["), "client.tab.previous")
-rex.bind(prefix("x"), "client.tab.close")
+rex.bind(prefix("x"), "pane.close")
+rex.bind(prefix("X"), "client.tab.close")
 rex.bind(prefix(","), "client.tab.rename")
 rex.bind(prefix("shift+r"), "session.rename")
 rex.bind(prefix("r"), "client.tab.rename")

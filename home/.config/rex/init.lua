@@ -10,7 +10,12 @@ amber.setup({
 	plugins = {
 		{ "rawnly/smart-splits-backend-rex", main = "smart-splits-rex", opts = { resize_amount = 3 } },
 		{ "rawnly/bracco", main = "bracco", version = "feature/rex_plugin", opts = {} },
-		{ "rawnly/pooh", main = "pooh", path = "/Users/federicovitale/Developer/RUST/pooh" },
+		{
+			"rawnly/pooh",
+			main = "pooh",
+			path = "/Users/federicovitale/Developer/RUST/pooh",
+			opts = { key = "ctrl+a>p" },
+		},
 	},
 })
 
@@ -19,17 +24,3 @@ for _, action in ipairs({ "quick-open", "popup", "edit-scrollback" }) do
 end
 
 require("keys")
-
-rex.action({
-	name = "probe_ui",
-	title = "Probe UI",
-	category = "Plugins",
-	args = { fail = "boolean?" },
-	run = function(ctx, args)
-		rex.log("info", "probe_ui ran, origin=" .. tostring(ctx.origin))
-		if args.fail then
-			error("probe failure message", 0)
-		end
-		return { status = "installed", detail = "probe result" }
-	end,
-})
