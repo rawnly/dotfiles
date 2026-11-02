@@ -9,7 +9,7 @@
 --
 -- Action names, their arguments, and most API results vary by client and server version, so they are typed
 -- loosely. Results this configuration reads have their own shapes; run `rex api describe METHOD` for the rest.
--- Server shapes checked against `rex api list --json`, server 0.0.1793140103-gf62f00.
+-- Server shapes checked against `rex api list --json`, server 0.0.1793420730-g6d0d9a.
 -- Nullable response fields are optional in Lua because JSON null becomes nil.
 
 ---@class Rex
@@ -131,6 +131,7 @@ function rex.client.queue(name, args) end
 ---@class rex.ViewLayer
 ---@field layer_id? string
 ---@field kind     "tiled" | "floating" | string `tiled` fills the window; treat an unknown kind as `floating`
+---@field state?   "minimized" | string  `minimized` isn't drawn but its blocks keep running; only floating layers; left out when normal. Treat an unknown state as normal
 ---@field bounds   number[]                     `[x, y, w, h]` as fractions of the window
 ---@field layout?   rex.ViewLayoutNode           A layer's layout; `null` when the layer is empty
 ---@field blocks?   rex.ViewBlock[]
@@ -256,6 +257,21 @@ function rex.client.queue(name, args) end
 ---@field created_split_id?  string
 ---@field removed_split_id? string
 
+---@class rex.SetLayerStateArgs
+---@field layer_id    string
+---@field state       "normal" | "minimized"
+---@field focus?      boolean Also raise the layer, focus its last focused block and activate its window; needs `state` `normal` and a layer with a block; defaults to false
+---@field session_id? string
+
+---@class rex.OwnBlockArgs
+---@field block_ids?  string[] Blocks to claim; left out or empty claims every block in the session
+---@field mode?       "take" | "request" `take` makes the calling client owner now; `request` owns only unowned blocks, and may get the rest when their owner leaves; defaults to `take`
+---@field session_id? string
+
+---@class rex.DisownBlockArgs
+---@field block_ids?  string[] Blocks to give up; left out or empty gives up every block in the session
+---@field session_id? string
+
 ---@class rex.SwapBlocksArgs
 ---@field block_id       string
 ---@field other_block_id string
@@ -357,6 +373,9 @@ function rex.client.queue(name, args) end
 ---@field zoom_block            fun(args?: rex.ZoomBlockArgs): rex.ZoomBlockResult?, string?
 ---@field resize_pane           fun(args: rex.ResizePaneArgs): rex.Revision?, string?
 ---@field resize_layer          fun(args: rex.ResizeLayerArgs): rex.Revision?, string?
+---@field set_layer_state      fun(args: rex.SetLayerStateArgs): rex.Revision?, string?
+---@field own_block             fun(args?: rex.OwnBlockArgs): table?, string?
+---@field disown_block          fun(args?: rex.DisownBlockArgs): table?, string?
 ---@field raise_layer           fun(args: rex.LayerOrderArgs): rex.Revision?, string?
 ---@field lower_layer           fun(args: rex.LayerOrderArgs): rex.Revision?, string?
 ---@field move_window           fun(args: rex.MoveWindowArgs): rex.Revision?, string?
