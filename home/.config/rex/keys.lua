@@ -11,26 +11,39 @@ local BOUNDS = {
 	-- full = { 0.05, 0.05, 0.9, 0.9 },
 	full = { 0.05, 0.05, 0.9, 0.9 },
 	picker = { 0.2, 0.15, 0.6, 0.7 },
+
+	right = function(size)
+		local w = size ~= nil and size or 0.5
+		local padding = 0.5 + (0.5 - w)
+
+		return { padding, 0, w, 1 }
+	end,
+	left = function(size)
+		local w = size ~= nil and size or 0.5
+
+		return { 0, 0, w, 1 }
+	end,
 }
 
 ---------------------------------------------------------------------------
 -- Tabs, sessions, layout
 ---------------------------------------------------------------------------
-rex.bind(prefix("]"), "client.tab.next")
-rex.bind(prefix("["), "client.tab.previous")
-rex.bind(prefix("x"), "pane.close")
-rex.bind(prefix("X"), "client.tab.close")
 rex.bind(prefix(","), "client.tab.rename")
-rex.bind(prefix("shift+r"), "session.rename")
-rex.bind(prefix("r"), "client.tab.rename")
 rex.bind(prefix("="), "pane.balance")
+rex.bind(prefix("X"), "client.tab.close")
+rex.bind(prefix("["), "client.tab.previous")
+rex.bind(prefix("]"), "client.tab.next")
 rex.bind(prefix("ctrl+a"), "pane.send_key", { key = "ctrl+a" }) -- send a literal ctrl+a
+rex.bind(prefix("r"), "client.tab.rename")
+rex.bind(prefix("shift+r"), "session.rename")
+rex.bind(prefix("x"), "pane.close")
 
 rex.bind("cmd+s", "client.sidebar.toggle")
 rex.bind("cmd+/", "pane.zoom")
 rex.bind("cmd+enter", "pane.split.right")
 rex.bind("shift+cmd+enter", "pane.split.down")
-rex.bind("alt+enter", "pane.split.auto")
+rex.bind("alt+enter", "pane.float")
+rex.bind("alt+shift+enter", "pane.minimize_floating")
 rex.bind("cmd+shift+r", "client.config.reload")
 
 ---------------------------------------------------------------------------
@@ -59,8 +72,16 @@ rex.bind(prefix("g"), "client.mode.enter", {
 	once = true,
 })
 
-rex.bind("git/g", "popup", { name = "lazygit", cmd = { "lazygit" }, bounds = BOUNDS.full })
-rex.bind("git/shift+g", "quick_open", { cmd = { "lazygit" }, ratio = 0.5 }) -- as a split
+rex.bind("git/g", "popup", {
+	name = "lazygit",
+	cmd = { "lazygit" },
+	bounds = BOUNDS.full,
+})
+rex.bind("git/shift+g", "quick_open", {
+	cmd = { "lazygit" },
+	floating = true,
+	bounds = BOUNDS.right(1 / 2.3),
+})
 
 ---------------------------------------------------------------------------
 -- One-shot floats
