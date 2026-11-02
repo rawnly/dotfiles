@@ -272,6 +272,13 @@ function rex.client.queue(name, args) end
 ---@field block_ids?  string[] Blocks to give up; left out or empty gives up every block in the session
 ---@field session_id? string
 
+---@class rex.BlockOwner
+---@field block_id? string
+---@field owner?    string The client that owns the block; left out when it has none
+
+---@class rex.OwnershipResult
+---@field blocks? rex.BlockOwner[] Each block and its owner after the call
+
 ---@class rex.SwapBlocksArgs
 ---@field block_id       string
 ---@field other_block_id string
@@ -374,8 +381,8 @@ function rex.client.queue(name, args) end
 ---@field resize_pane           fun(args: rex.ResizePaneArgs): rex.Revision?, string?
 ---@field resize_layer          fun(args: rex.ResizeLayerArgs): rex.Revision?, string?
 ---@field set_layer_state      fun(args: rex.SetLayerStateArgs): rex.Revision?, string?
----@field own_block             fun(args?: rex.OwnBlockArgs): table?, string?
----@field disown_block          fun(args?: rex.DisownBlockArgs): table?, string?
+---@field own_block             fun(args?: rex.OwnBlockArgs): rex.OwnershipResult?, string?
+---@field disown_block          fun(args?: rex.DisownBlockArgs): rex.OwnershipResult?, string?
 ---@field raise_layer           fun(args: rex.LayerOrderArgs): rex.Revision?, string?
 ---@field lower_layer           fun(args: rex.LayerOrderArgs): rex.Revision?, string?
 ---@field move_window           fun(args: rex.MoveWindowArgs): rex.Revision?, string?
