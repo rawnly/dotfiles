@@ -20,5 +20,6 @@ packages = "{{ config_source | dirname }}/homebrew.toml"
 dotfiles = "{{ config_source | dirname }}/dotfiles.toml"
 
 [env]
+MISE_BREW_CASK_OPT_APPDIR = "~/Applications"
 PI_TELEMETRY = "0"
 DO_NOT_TRACK = 1

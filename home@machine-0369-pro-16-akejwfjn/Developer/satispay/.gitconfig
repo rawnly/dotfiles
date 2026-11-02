@@ -1,0 +1,10 @@
+[user]
+	name = Federico Vitale
+	email = federico.vitale@satispay.com
+	signingkey = ~/.ssh/id_github.pub
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[core]
+	sshCommand = ssh -i ~/.ssh/id_github -o IdentitiesOnly=yes
