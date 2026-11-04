@@ -8,6 +8,10 @@
     "rawnly/pooh": {
       "commit": "9e4df34527ce02af7c72eb7d993a040ecde36949"
     },
+    "rawnly/sex": {
+      "commit": "ca95fa5338f0f0bc0f4728fde237e16085e653c8",
+      "version": "feature/amber"
+    },
     "rawnly/smart-splits-backend-rex": {
       "commit": "45785cf5d15dd5e0e6cf25ab9682a146acb93379"
     }
