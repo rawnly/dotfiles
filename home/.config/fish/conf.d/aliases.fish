@@ -17,7 +17,7 @@ alias pbk "more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to pas
 alias gpc "git push origin \$(branchName)"
 
 # Generate a 32-byte random string
-alias secret="openssl rand -base64 32 | tr -d '\n' | tr -d ' '"
+alias gen-secret="openssl rand -base64 32 | tr -d '\n' | tr -d ' '"
 
 # Recursively delete `.DS_Store` files
 alias cat 'bat -p'
