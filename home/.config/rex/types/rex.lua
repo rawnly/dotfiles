@@ -9,7 +9,7 @@
 --
 -- Action names, their arguments, and most API results vary by client and server version, so they are typed
 -- loosely. Results this configuration reads have their own shapes; run `rex api describe METHOD` for the rest.
--- Server shapes checked against `rex api list --json`, server 0.0.1793420730-g6d0d9a.
+-- Server shapes checked against `rex api list --json`, server 0.0.1793741575-g1b6654.
 -- Nullable response fields are optional in Lua because JSON null becomes nil.
 
 ---@class Rex
@@ -473,7 +473,7 @@ function rex.block.call(creator, method, args) end
 rex.layout = {}
 
 --- `flavor` names what to create, such as `com.superlogical.terminal.shell`.
----@param block { flavor: string, options?: rex.TerminalOptions | table }
+---@param block { flavor: string, label?: string, options?: rex.TerminalOptions | table }
 ---@return rex.Layout
 function rex.layout.block(block) end
 

@@ -21,7 +21,7 @@ amber.setup({
   },
 })
 
-for _, action in ipairs({ "quick-open", "popup", "edit-scrollback", "pane-float", "pane-minimize" }) do
+for _, action in ipairs({ "quick-open", "popup", "edit-scrollback", "pane-float", "pane-minimize", "broadcast" }) do
   require("actions." .. action)
 end
 

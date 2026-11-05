@@ -92,6 +92,7 @@ rex.bind(prefix("i"), "quick_open", {
 	bounds = BOUNDS.picker,
 })
 rex.bind(prefix("e"), "edit_scrollback")
+rex.bind(prefix("b"), "broadcast") -- type into every pane of this tab
 
 ---------------------------------------------------------------------------
 -- AMBER
